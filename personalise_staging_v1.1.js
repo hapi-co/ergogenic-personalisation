@@ -11,7 +11,7 @@ $( document ).ready(function() {
     // console.log("experience =", noob_val);
 
     var experience_val = urlParams.get('experience'); // true (string)
-    console.log("experience_true");
+    // console.log("experience_true");
     var experience_string = urlParams.get('experience'); // NULL
 
     // if (urlParams.has('experience')) {
@@ -27,18 +27,14 @@ $( document ).ready(function() {
       avg.style.display = "none";
       advanced.style.display = "none";
 
-    }
-
-    if (experience_string == 'avg') {
-      console.log("AVG!!");
+    } else if (experience_string == 'avg') {
+      console.log("avg true");
       noob.style.display = "none";
       avg.style.display = "block";
       advanced.style.display = "none";
 
-    }
-
-    if (experience_string == 'advanced') {
-      console.log("ADVANCED!!");
+    } else if (experience_string == 'advanced') {
+      console.log("advanced true");
       noob.style.display = "none";
       avg.style.display = "none";
       advanced.style.display = "block";
