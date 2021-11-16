@@ -1,86 +1,48 @@
-/*
-?myparam1={id1}&myparam2={id2}
+$( document ).ready(function() {
+    // console.log( "ready 2!" );
 
-https://www.ergogenic.health/personalisation/cognitive-enhancement?experience=noob&
+    const urlParams = new URLSearchParams(window.location.search);
+    const experience_param = urlParams.get('experience');
+    console.log("experience param =", experience_param);
 
-Values:
-area=brain
-area=sleep
-area=testosterone
+    // var is_noob = urlParams.has('experience'); // true (boolean)
+    // console.log("experience_true");
+    // var noob_val = urlParams.get('experience'); //success
+    // console.log("experience =", noob_val);
 
-experience=noob
-experience=average
-experience=pro
+    var experience_val = urlParams.get('experience'); // true (string)
+    console.log("experience_true");
+    var experience_string = urlParams.get('experience'); // NULL
 
-focus=brain-concentration
-focus=sleep-quality
-focus=testosterone-libido
+    // if (urlParams.has('experience')) {
+      // console.log("success");
+      // var noob = document.getElementById("noob");
+      // noob.style.display = "block";
+      // console.log("noob true");
+    // }
 
+    if (experience_string == 'noob') {
+      console.log("NOOB!");
+      noob.style.display = "block";
+      avg.style.display = "none";
+      advanced.style.display = "none";
 
-First test URL: https://www.ergogenic.health/personalisation/cognitive-enhancement?area=Cognitive%20Performance&experience=Fuck%20all%20-%20I%27m%20a%20noob
-
-Second test URL: https://www.ergogenic.health/personalisation/cognitive-enhancement?area=brain&experience=advanced
-*/
-
-// V1
-  const queryString = window.location.search;
-  console.log(queryString);
-
-  const urlParams = new URLSearchParams(queryString);
-  if (urlParams.has('experience=noob')) {
-    var x = document.getElementById("noob");
-    x.style.display = "none";
-  }
-
-
-// V2
-  const queryString = window.location.search;
-  console.log(queryString);
-
-  const urlParams = new URLSearchParams(queryString);
-
-  const area = urlParams.get('area')
-  console.log(area);
-
-  const experience = urlParams.get('experience')
-  console.log(experience);
-
-  }
-
-// V3
-  const queryString = window.location.search;
-  console.log(queryString);
-
-  const urlParams = new URLSearchParams(queryString);
-  if (urlParams.has('noob')) {
-    console.log(hide_noob_h1_triggered);
-    var noob_h1 = document.getElementById("noob");
-    noob_h1.style.display = "none";
-  }
-
-  const area = urlParams.get('area')
-  console.log(area);
-
-  const experience = urlParams.get('experience')
-  console.log(experience);
-
-// V4
-  const queryString = window.location.search;
-  console.log(queryString);
-
-  const urlParams = new URLSearchParams(queryString);
-
-  // Function won't load. Figure out how to make it fire!!
-  window.onload = function() {
-    if (urlParams.has('noob')) {
-      console.log(hide_noob_h1_triggered);
-      var noob_h1 = document.getElementById("noob");
-      noob_h1.style.display = "none";
     }
-  }
 
-  const area = urlParams.get('area')
-  console.log(area);
+    if (experience_string == 'avg') {
+      console.log("AVG!!");
+      noob.style.display = "none";
+      avg.style.display = "block";
+      advanced.style.display = "none";
 
-  const experience = urlParams.get('experience')
-  console.log(experience);
+    }
+
+    if (experience_string == 'advanced') {
+      console.log("ADVANCED!!");
+      noob.style.display = "none";
+      avg.style.display = "none";
+      advanced.style.display = "block";
+
+    }
+
+});
