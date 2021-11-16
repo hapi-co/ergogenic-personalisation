@@ -2,6 +2,4 @@
 
 <!-- Custom JS / Jquery script -->
 <!-- Uses a Github repo + JSDeliver CDN -->
-https://cdn.jsdelivr.net/gh/hapi-co/ergogenic-personalisation/scripts/personalise.js
-
-https://github.com/hapi-co/ergogenic-personalisation/scripts/personalise.js
+https://cdn.jsdelivr.net/gh/hapi-co/ergogenic-personalisation/personalise.js
