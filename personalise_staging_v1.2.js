@@ -23,25 +23,42 @@ $( document ).ready(function() {
     // Update name
     var name_string = urlParams.get('name'); // NULL
     console.log(name_string);
-    $("#name").text("Name: " + name_string);
+    $("#name").text(name_string);
+    // $("#name_01").text(name_string);
 
     // Update category
-    var category_string = urlParams.get('category'); // NULL
+    var category_string = urlParams.get('category');
     console.log(category_string);
-    $("#category").text("Category: " + category_string);
+    $("#category").text(category_string);
+
+    // Update priority
+    var priority_string = urlParams.get('priority');
+    console.log(priority_string);
+    $("#priority").text(priority_string);
 
 
-    if (experience_string == 'noob') {
-      console.log("NOOB!");
-      $("#experience").text("Experience: " + "YOU'RE A NOOB!");
+    if (experience_string == 'mush') {
+      console.log("mush = true");
+      $("#experience").text("Optimised: " + "YOU'RE A NOOB!");
+      $("#optimised_01").css('opacity', '1');
+      $("#optimised_02").css('opacity', '0.5');
+      $("#optimised_03").css('opacity', '0.5');
+      $("#optimised_01").css('border', '4px solid #395C56');
 
-    } else if (experience_string == 'avg') {
-      console.log("avg true");
-      $("#experience").text("Experience: " + "YOU'RE AVERAGE!");
+    } else if (experience_string == 'noob') {
+      console.log("noob = true");
+      $("#experience").text("Optimised: " + "YOU'RE AVERAGE!");
+      $("#optimised_01").css('opacity', '0.5');
+      $("#optimised_02").css('opacity', '1');
+      $("#optimised_03").css('opacity', '0.5');
+      $("#optimised_02").css('border', '4px solid #395C56');
 
     } else if (experience_string == 'advanced') {
-      console.log("advanced true");
-      $("#experience").text("Experience: " + "YOU'RE ADVANCED!");
+      console.log("advanced = true");
+      $("#experience").text("Optimised: " + "YOU'RE ADVANCED!");
+      $("#optimised_01").css('opacity', '0.5');
+      $("#optimised_02").css('opacity', '0.5');
+      $("#optimised_03").css('border', '4px solid #395C56');
 
     }
 
