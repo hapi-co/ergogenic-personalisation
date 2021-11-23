@@ -15,10 +15,9 @@ $( document ).ready(function() {
     // Experience values
     const experience_param = urlParams.get('experience');
     console.log("experience param =", experience_param);
-
+    var experience_string = urlParams.get('experience');
     // var experience_val = urlParams.get('experience'); // true (string)
     // console.log("experience_true");
-    var experience_string = urlParams.get('experience'); // NULL
 
     // Update name
     var name_string = urlParams.get('name'); // NULL
@@ -37,6 +36,7 @@ $( document ).ready(function() {
     $("#priority").text(priority_string);
 
 
+    // Experience / level of optimisation from 1-3
     if (experience_string == 'mush') {
       console.log("mush = true");
       $("#experience").text("Optimised: " + "YOU'RE A NOOB!");
@@ -59,6 +59,29 @@ $( document ).ready(function() {
       $("#optimised_01").css('opacity', '0.5');
       $("#optimised_02").css('opacity', '0.5');
       $("#optimised_03").css('border', '4px solid #395C56');
+
+    }
+
+    // Subcategory focus area
+    if (priority_string == 'focus') {
+      console.log("focus = true");
+      // Script here
+
+    } else if (priority_string == 'memory') {
+      console.log("memory = true");
+      // Script here
+
+    } else if (priority_string == 'stress') {
+      console.log("stress = true");
+      // Script here
+
+    } else if (priority_string == 'mood') {
+      console.log("mood = true");
+      // Script here
+
+    } else if (priority_string == 'other') {
+      console.log("other = true");
+      // Script here
 
     }
 
