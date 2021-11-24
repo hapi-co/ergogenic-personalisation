@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+ $( document ).ready(function() {
     // console.log( "ready 2!" );
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -65,7 +65,7 @@ $( document ).ready(function() {
     // Subcategory focus area
     if (priority_string == 'focus') {
       console.log("focus = true");
-      // Script here
+      $("#noots-for").text("improving " + 'Focus');
 
     } else if (priority_string == 'memory') {
       console.log("memory = true");
