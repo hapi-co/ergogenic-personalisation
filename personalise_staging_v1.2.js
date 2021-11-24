@@ -35,7 +35,6 @@
     console.log(priority_string);
     $("#priority").text(priority_string);
 
-
     // Experience / level of optimisation from 1-3
     if (experience_string == 'mush') {
       console.log("mush = true");
@@ -65,23 +64,25 @@
     // Subcategory focus area
     if (priority_string == 'focus') {
       console.log("focus = true");
-      $("#noots-for").text("improving " + 'Focus');
+      $("#noots-for").text("improving " + "Focus");
 
     } else if (priority_string == 'memory') {
       console.log("memory = true");
-      // Script here
+      $("#noots-for").text("improving " + "Memory");
 
     } else if (priority_string == 'stress') {
       console.log("stress = true");
-      // Script here
+      $("#noots-for").text("reducing " + "Stress");
 
     } else if (priority_string == 'mood') {
       console.log("mood = true");
-      // Script here
+      $("#noots-for").text("improving " + "Mood");
 
     } else if (priority_string == 'other') {
       console.log("other = true");
       // Script here
+      // Hide container
+      // Show 1-1 coaching / cust stack service
 
     }
 
