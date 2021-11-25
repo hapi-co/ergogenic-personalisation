@@ -25,6 +25,31 @@ https://ergogenic.webflow.io/personalisation/cognitive-enhancement?name=John&cat
       height: 128px;
       margin: 20px;
     }
+
+    /* Custom responsive YouTube embed + jQuery play on btn click */
+    .embed-container {
+      opacity: 0;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .embed-container iframe, .embed-container object, .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /*
+    #clickMe {
+      width: 100px;
+      height: 50px;
+      background-color: green;
+    }
+    */
+
   </style>
 </head>
 
@@ -36,6 +61,12 @@ https://ergogenic.webflow.io/personalisation/cognitive-enhancement?name=John&cat
   <div id="optimised_01"></div>
   <div id="optimised_02"></div>
   <div id="optimised_03"></div>
+
+  <div id="clickMe"></div>
+
+  <!-- Custom responsive YouTube embed + jQuery play on btn click -->
+  <div class='embed-container'><iframe id="iframe" width="1280" height="720" src="//www.youtube.com/embed/qTdbBS5VEwY" data-autoplay-src="//www.youtube.com/embed/qTdbBS5VEwY?autoplay=1" frameborder="0" allowtransparency="true" allowfullscreen ></iframe></div>
+
 </body>
 
 </html>

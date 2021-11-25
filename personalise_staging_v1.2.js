@@ -87,3 +87,30 @@
     }
 
 });
+
+jQuery("#clickMe").on('click', function() {
+   console.log("clicked...waiting...");
+   setTimeout(
+       function() {
+         var vi = jQuery("#iframe");
+         vi.attr("src", vi.data("autoplay-src"));
+         $(".embed-container").css({ opacity: 1 });
+         console.log("play clicked");
+       },
+       // Num of miliseconds to hide for. 1,000 = 1 sec.
+       1000);
+});
+
+// Legacy
+// jQuery("#clickMe").on('click', function() {
+   // var vi = jQuery("#iframe");
+   // vi.attr("src", vi.data("autoplay-src"));
+   // $(".embed-container").css("display", "block");
+   // console.log("play clicked");
+// });
+
+// Legacy
+// $('.trigger').on('click', function() {
+   // $(".video")[0].src += "1";
+   // console.log("play clicked 02");
+// });
