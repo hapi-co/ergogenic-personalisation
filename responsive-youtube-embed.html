@@ -1,0 +1,44 @@
+<!-- Responsive -->
+<!-- CSS -->
+<style>
+/* Custom responsive YouTube embed + jQuery play on btn click */
+    .embed-container {
+      display: none;
+      opacity: 0;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .embed-container iframe, .embed-container object, .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+</style>
+
+<!-- HTML -->
+<!-- Custom responsive YouTube embed + jQuery play on btn click -->
+<div class='embed-container'><iframe id="iframe" width="1280" height="720" src="//www.youtube.com/embed/qTdbBS5VEwY" data-autoplay-src="//www.youtube.com/embed/qTdbBS5VEwY?autoplay=1" frameborder="0" allowtransparency="true" allowfullscreen ></iframe></div>
+
+<!-- old -->
+<iframe id="iframe" width="1280" height="720" src="//www.youtube.com/embed/qTdbBS5VEwY" data-autoplay-src="//www.youtube.com/embed/qTdbBS5VEwY?autoplay=1" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+
+
+
+
+<!-- Non-responsive / default embed -->
+<iframe id="video" width="100%" height="auto" src="//www.youtube.com/embed/qTdbBS5VEwY" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+
+<!-- JS -->
+<script>
+  $(document).ready(function() {
+    $('#playVideo').on('click', function(ev) {
+      $("#video")[0].src += "&autoplay=1";
+      ev.preventDefault();
+    });
+  });
+</script>

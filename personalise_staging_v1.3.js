@@ -1,4 +1,12 @@
- $( document ).ready(function() {
+<!-- Custom JS / Jquery script -->
+<!-- Uses a Github repo + JSDeliver CDN -->
+<!--
+<script src="https://cdn.jsdelivr.net/gh/hapi-co/ergogenic-personalisation/personalise.js"></script>
+-->
+
+<script>
+
+    $( document ).ready(function() {
     // console.log( "ready 2!" );
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -108,16 +116,4 @@ jQuery("#playVideo").on('click', function() {
        100);
 });
 
-// Legacy
-// jQuery("#clickMe").on('click', function() {
-   // var vi = jQuery("#iframe");
-   // vi.attr("src", vi.data("autoplay-src"));
-   // $(".embed-container").css("display", "block");
-   // console.log("play clicked");
-// });
-
-// Legacy
-// $('.trigger').on('click', function() {
-   // $(".video")[0].src += "1";
-   // console.log("play clicked 02");
-// });
+</script>
