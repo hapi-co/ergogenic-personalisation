@@ -12,37 +12,36 @@
     $( document ).ready(function() {
     console.log( "Document ready - logic script running!" );
 
+    // Get URL & paramaters
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams);
 
     // Name values
     // Values: dynamic
     const name_param = urlParams.get('name');
-    console.log("name param =", name_param);
+    console.log("name =", name_param);
 
     // Optimised values
     // Values: notvery, somewhat, psychonaut
     const optimised_param = urlParams.get('optimised');
-    console.log("optimised param =", optimised_param);
+    console.log("optimised =", optimised_param);
     // Test w/ out last line, seems like a duplicate...
     // var experience_string = urlParams.get('experience');
 
     // Category values
     // Values: brain, sleep, testosterone
     const category_param = urlParams.get('category');
-    console.log("category param =", category_param);
+    console.log("category =", category_param);
 
     // Subcategory values
     // Values: focus, memory, stress, mood, other
     const subcategory_param = urlParams.get('subcategory');
-    console.log("subcategory param =", subcategory_param);
+    console.log("subcategory =", subcategory_param);
 
     // Experience values
     // Values: fresh, avg, expert
     const experience_param = urlParams.get('experience');
-    console.log("experience param =", experience_param);
-    // Test w/ out last line, seems like a duplicate...
-    // var experience_string = urlParams.get('experience');
+    console.log("experience =", experience_param);
 
     // Update name
     var name_string = urlParams.get('name'); // NULL
@@ -55,16 +54,9 @@
     console.log("Update category to:", category_string);
     $("#category").text(category_string);
 
-    // Update subcategory
-    // var subcategory_string = urlParams.get('subcategory');
-    // console.log("Update subcategory to:", subcategory_string);
-    // $(".subcategory").text(subcategory_string);
-
     // Experience / level of optimisation from 1-3
-    // Hero section
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
-      // $("#experience").text("Optimised: " + "YOU'RE A NOOB!");
       $("#optimised_01").css('opacity', '1');
       $("#optimised_02").css('opacity', '0.5');
       $("#optimised_03").css('opacity', '0.5');
@@ -72,7 +64,6 @@
 
     } else if (optimised_param == 'somewhat') {
       console.log("Optimised = Somewhat");
-      // $("#experience").text("Optimised: " + "YOU'RE AVERAGE!");
       $("#optimised_01").css('opacity', '0.5');
       $("#optimised_02").css('opacity', '1');
       $("#optimised_03").css('opacity', '0.5');
@@ -80,12 +71,13 @@
 
     } else if (optimised_param == 'psychonaut') {
       console.log("Optimised: Psychonaut = true");
-      // $("#experience").text("Optimised: " + "YOU'RE ADVANCED!");
       $("#optimised_01").css('opacity', '0.5');
       $("#optimised_02").css('opacity', '0.5');
       $("#optimised_03").css('opacity', '1');
       $("#optimised_03").css('border', '4px solid #395C56');
     }
+
+    // Global
 
     // Show / hide blocks
     // $("#id").show();
@@ -119,6 +111,10 @@
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text("Focus-Enhancement");
+      $("#playlist_focus").show();
+      $("#playlist_memory").hide();
+      $("#playlist_stress").hide();
+      $("#playlist_mood").hide();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
@@ -140,6 +136,10 @@
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text("Memory-Enhancement");
+      $("#playlist_focus").hide();
+      $("#playlist_memory").show();
+      $("#playlist_stress").hide();
+      $("#playlist_mood").hide();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
@@ -161,6 +161,10 @@
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text("Stress-Reduction");
+      $("#playlist_focus").hide();
+      $("#playlist_memory").hide();
+      $("#playlist_stress").show();
+      $("#playlist_mood").hide();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
@@ -182,6 +186,10 @@
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text("Mood-Boosting");
+      $("#playlist_focus").hide();
+      $("#playlist_memory").hide();
+      $("#playlist_stress").hide();
+      $("#playlist_mood").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
