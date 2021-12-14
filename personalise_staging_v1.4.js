@@ -103,15 +103,16 @@ $(document).ready(function() {
       $("#playlist_subtitle").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(focusTitle);
-      $("#playlist_title").text(subcategory_param);
+      $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus").show();
       $("#playlist_memory, #playlist_stress, #playlist_mood").hide();
       // Masterclass section
-      $("#masterclass_subheading").text("Masterclass subheading");
       $("#masterclassModule_focus").show();
       $("#masterclassModule_memory, #masterclassModule_stress, #masterclassModule_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(focusTitle);
+      $("#customStackBanner_focus").show();
+      $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_mood").hide();
 
     } else if (subcategory_param == 'memory') {
       console.log("memory = true");
@@ -127,15 +128,16 @@ $(document).ready(function() {
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(memoryTitle);
-      $("#playlist_title").text(subcategory_param);
+      $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus, #playlist_stress, #playlist_mood").hide();
       $("#playlist_memory").show();
       // Masterclass section
-      $("#masterclass_subheading").text("Masterclass subheading");
       $("#masterclassModule_memory").show();
       $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(memoryTitle);
+      $("#customStackBanner_memory").show();
+      $("#customStackBanner_focus, #customStackBanner_stress, #customStackBanner_mood").hide();
 
     } else if (subcategory_param == 'stress') {
       console.log("stress = true");
@@ -151,15 +153,16 @@ $(document).ready(function() {
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(stressTitle);
-      $("#playlist_title").text(subcategory_param);
+      $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus, #playlist_memory, #playlist_mood").hide();
       $("#playlist_stress").show();
       // Masterclass section
-      $("#masterclass_subheading").text("Masterclass subheading");
       $("#masterclassModule_stress").show();
       $("#masterclassModule_focus, #masterclassModule_memory, #masterclassModule_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(stressTitle);
+      $("#customStackBanner_stress").show();
+      $("#customStackBanner_memory, #customStackBanner_focus, #customStackBanner_mood").hide();
 
     } else if (subcategory_param == 'mood') {
       console.log("mood = true");
@@ -175,15 +178,16 @@ $(document).ready(function() {
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(moodTitle);
-      $("#playlist_title").text(subcategory_param);
+      $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus, #playlist_memory, #playlist_stress").hide();
       $("#playlist_mood").show();
       // Masterclass section
-      $("#masterclass_subheading").text("Masterclass subheading");
       $("#masterclass_modules_mood").show();
       $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_memory").hide();
       // Custom Stack section
       $("#custom_stack_title").text(moodTitle);
+      $("#customStackBanner_mood").show();
+      $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_focus").hide();
 
     } else if (subcategory_param == 'other') {
       console.log("other = true");
@@ -207,7 +211,7 @@ $(document).ready(function() {
       console.log("experience = avg");
       console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
       $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
-      $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
+      // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
 
     } else if (experience_param == 'expert') {
       console.log("experience = expert");
@@ -221,9 +225,9 @@ $(document).ready(function() {
     // Coaching logic
     if (coaching_param == 'yes') {
       console.log("coaching = true");
+      $("#checklist_customStack, #custom_stack_block").show();
       $("#custom_stack_block").insertAfter("#checklist");
-      $("#checklist_customStack").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+      // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
       // Else if??
