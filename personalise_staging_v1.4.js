@@ -55,10 +55,10 @@ $(document).ready(function() {
     $("#category").text(category_string);
 
     // Content
-    var focusTitle = "Focus-Enhancement";
-    var memoryTitle = "Memory-Enhancement";
-    var stressTitle = "Stress-Reduction";
-    var moodTitle = "Mood-Boosting";
+    var focusTitle = "Focus Enhancement";
+    var memoryTitle = "Memory Enhancement";
+    var stressTitle = "Stress Reduction";
+    var moodTitle = "Mood Boosting";
 
     // Optimised - from 1-3
     if (optimised_param == 'notvery') {
@@ -95,18 +95,21 @@ $(document).ready(function() {
       $("#checklist_title").text(focusTitle);
       // Noots section
       $("#noots_products_title").text("Focus");
-      $("#noots_products_subheading").text("Noots subheading");
+      $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus").show();
       $("#products_memory, #products_stress, #products_mood").hide();
       // Ebook section
       $("#ebook_title").text("Improve Focus");
-      $("#ebook_subheading").text("Ebook subheading");
+      $("#playlist_subtitle").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(focusTitle);
+      $("#playlist_title").text(subcategory_param);
       $("#playlist_focus").show();
       $("#playlist_memory, #playlist_stress, #playlist_mood").hide();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
+      $("#masterclass_modules_focus").show();
+      $("#masterclass_modules_memory, #masterclass_modules_stress, #masterclass_modules_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(focusTitle);
 
@@ -116,7 +119,7 @@ $(document).ready(function() {
       $("#checklist_title").text(memoryTitle);
       // Noots section
       $("#noots_products_title").text("Memory");
-      $("#noots_products_subheading").text("Noots subheading");
+      $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_stress, #products_mood").hide();
       $("#products_memory").show();
       // Ebook section
@@ -124,10 +127,13 @@ $(document).ready(function() {
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(memoryTitle);
+      $("#playlist_title").text(subcategory_param);
       $("#playlist_focus, #playlist_stress, #playlist_mood").hide();
       $("#playlist_memory").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
+      $("#masterclass_modules_memory").show();
+      $("#masterclass_modules_focus, #masterclass_modules_stress, #masterclass_modules_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(memoryTitle);
 
@@ -137,7 +143,7 @@ $(document).ready(function() {
       $("#checklist_title").text("stressTitle");
       // Noots section
       $("#noots_products_title").text(stressTitle);
-      $("#noots_products_subheading").text("Noots subheading");
+      $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_mood").hide();
       $("#products_stress").show();
       // Ebook section
@@ -145,10 +151,13 @@ $(document).ready(function() {
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(stressTitle);
+      $("#playlist_title").text(subcategory_param);
       $("#playlist_focus, #playlist_memory, #playlist_mood").hide();
       $("#playlist_stress").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
+      $("#masterclass_modules_stress").show();
+      $("#masterclass_modules_focus, #masterclass_modules_memory, #masterclass_modules_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(stressTitle);
 
@@ -158,7 +167,7 @@ $(document).ready(function() {
       $("#checklist_title").text(moodTitle);
       // Noots section
       $("#noots_products_title").text(moodTitle);
-      $("#noots_products_subheading").text("Noots subheading");
+      $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_stress").hide();
       $("#products_mood").show();
       // Ebook section
@@ -166,10 +175,13 @@ $(document).ready(function() {
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(moodTitle);
+      $("#playlist_title").text(subcategory_param);
       $("#playlist_focus, #playlist_memory, #playlist_stress").hide();
       $("#playlist_mood").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
+      $("#masterclass_modules_mood").show();
+      $("#masterclass_modules_focus, #masterclass_modules_stress, #masterclass_modules_memory").hide();
       // Custom Stack section
       $("#custom_stack_title").text(moodTitle);
 
