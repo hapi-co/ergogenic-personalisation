@@ -108,8 +108,8 @@ $(document).ready(function() {
       $("#playlist_memory, #playlist_stress, #playlist_mood").hide();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
-      $("#masterclass_modules_focus").show();
-      $("#masterclass_modules_memory, #masterclass_modules_stress, #masterclass_modules_mood").hide();
+      $("#masterclassModule_focus").show();
+      $("#masterclassModule_memory, #masterclassModule_stress, #masterclassModule_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(focusTitle);
 
@@ -132,8 +132,8 @@ $(document).ready(function() {
       $("#playlist_memory").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
-      $("#masterclass_modules_memory").show();
-      $("#masterclass_modules_focus, #masterclass_modules_stress, #masterclass_modules_mood").hide();
+      $("#masterclassModule_memory").show();
+      $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(memoryTitle);
 
@@ -156,8 +156,8 @@ $(document).ready(function() {
       $("#playlist_stress").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
-      $("#masterclass_modules_stress").show();
-      $("#masterclass_modules_focus, #masterclass_modules_memory, #masterclass_modules_mood").hide();
+      $("#masterclassModule_stress").show();
+      $("#masterclassModule_focus, #masterclassModule_memory, #masterclassModule_mood").hide();
       // Custom Stack section
       $("#custom_stack_title").text(stressTitle);
 
@@ -181,7 +181,7 @@ $(document).ready(function() {
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       $("#masterclass_modules_mood").show();
-      $("#masterclass_modules_focus, #masterclass_modules_stress, #masterclass_modules_memory").hide();
+      $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_memory").hide();
       // Custom Stack section
       $("#custom_stack_title").text(moodTitle);
 
@@ -223,7 +223,7 @@ $(document).ready(function() {
       console.log("coaching = true");
       $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
       // Else if??
@@ -231,13 +231,13 @@ $(document).ready(function() {
       // $("#checklist_customStack, #custom_stack_block").hide();
     // }
 
-    if (masterclass_param == 'yes') {
-      console.log("masterclass = true");
-      $("#checklist_masterclass, #masterclass_block").show();
+    // if (masterclass_param == 'yes') {
+      // console.log("masterclass = true");
+      // $("#checklist_masterclass, #masterclass_block").show();
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
       // Else if??
-    } // else {
+    // } // else {
       // $("#checklist_masterclass, #masterclass_block").hide();
     // }
 
