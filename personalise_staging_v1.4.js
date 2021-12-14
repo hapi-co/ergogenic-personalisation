@@ -100,6 +100,9 @@ $(document).ready(function() {
       // #masterclass_block
       // #custom_stack_block
 
+    // Checklist IDs
+    // #checklist_noots, #checklist_ebook, #checklist_playlist, #checklist_masterclass, #checklist_customStack
+
     if (coaching_param == 'yes') {
       console.log("coaching = true");
       $("#custom_stack_block").insertAfter("#checklist");
@@ -226,34 +229,27 @@ $(document).ready(function() {
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
     }
 
-    // $("#id").show();
-    // $("#id").hide();
-      // #noots_block
-      // #ebook_block
-      // #playlist_block
-      // #masterclass_block
-      // #custom_stack_block
-
     // Experience
     if (experience_param == 'fresh') {
       console.log("experience = fresh");
       console.log("show: ebook, playlist, masterclass & hide custom noots");
-      $("#ebook_block, #playlist_block, #masterclass_block").show();
-      $("#custom_stack_block").hide();
+      $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+      $("#custom_stack_block, #checklist_customStack").hide();
 
     } else if (experience_param == 'avg') {
       // Show Ebook, Custom Stack, Masterclass
       console.log("experience = avg");
       console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
-      $("#ebook_block, #custom_stack_block, #masterclass_block").show();
-      $("#noots_block, #playlist_block").hide();
+      $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
+      $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
 
     } else if (experience_param == 'expert') {
       console.log("experience = expert");
       console.log("show: custom stack, hide all else");
-      $("#custom_stack_block").show();
-      $("#noots_block, #ebook_block, #playlist_block, #masterclass_block").hide();
+      $("#custom_stack_block, #checklist_customStack").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Show coaching at top, hide everything else
+      // Need to update checklist
     }
 
 });
@@ -268,10 +264,6 @@ jQuery("#playVideo").on('click', function() {
          $(".embed-container").css({ opacity: 1 });
          $(".embed-container").css({ height: "100%" });
          $(".embed-container").css({ paddingBottom: "56.25%" });
-         // console.log("video opacity set to 100%");
-         // console.log("video height set to 100%");
-         // console.log("video padding-bottom set to 56.25%");
-         // console.log("video playing...");
        },
        // Num of miliseconds to hide for. 1,000 = 1 sec.
        350);
