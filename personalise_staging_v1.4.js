@@ -54,6 +54,12 @@ $(document).ready(function() {
     console.log("Update category to:", category_string);
     $("#category").text(category_string);
 
+    // Content
+    var focusTitle = "Focus-Enhancement";
+    var memoryTitle = "Memory-Enhancement";
+    var stressTitle = "Stress-Reduction";
+    var moodTitle = "Mood-Boosting";
+
     // Optimised - from 1-3
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
@@ -82,24 +88,6 @@ $(document).ready(function() {
     // Checklist IDs
       // #checklist_noots, #checklist_ebook, #checklist_playlist, #checklist_masterclass, #checklist_customStack
 
-    if (coaching_param == 'yes') {
-      console.log("coaching = true");
-      $("#custom_stack_block").insertAfter("#checklist");
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-      // Else if??
-    }
-
-    if (masterclass_param == 'yes') {
-      console.log("masterclass = true");
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-      // Else if??
-    }
-
-    var focusTitle = "Focus-Enhancement";
-    console.log(focusTitle);
-
     // Subcategory focus area
     if (subcategory_param == 'focus') {
       console.log("focus = true");
@@ -125,7 +113,7 @@ $(document).ready(function() {
     } else if (subcategory_param == 'memory') {
       console.log("memory = true");
       // Checklist section
-      $("#checklist_title").text("Memory-Enhancement");
+      $("#checklist_title").text(memoryTitle);
       // Noots section
       $("#noots_products_title").text("Memory");
       $("#noots_products_subheading").text("Noots subheading");
@@ -135,20 +123,20 @@ $(document).ready(function() {
       $("#ebook_title").text("Improve Memory");
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
-      $("#playlist_title").text("Memory-Enhancement");
+      $("#playlist_title").text(memoryTitle);
       $("#playlist_focus, #playlist_stress, #playlist_mood").hide();
       $("#playlist_memory").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
-      $("#custom_stack_title").text("Memory-Enhancement");
+      $("#custom_stack_title").text(memoryTitle);
 
     } else if (subcategory_param == 'stress') {
       console.log("stress = true");
       // Checklist section
-      $("#checklist_title").text("Stress-Reduction");
+      $("#checklist_title").text("stressTitle");
       // Noots section
-      $("#noots_products_title").text("Stress-Reduction");
+      $("#noots_products_title").text(stressTitle);
       $("#noots_products_subheading").text("Noots subheading");
       $("#products_focus, #products_memory, #products_mood").hide();
       $("#products_stress").show();
@@ -156,20 +144,20 @@ $(document).ready(function() {
       $("#ebook_title").text("Reduce Stress");
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
-      $("#playlist_title").text("Stress-Reduction");
+      $("#playlist_title").text(stressTitle);
       $("#playlist_focus, #playlist_memory, #playlist_mood").hide();
       $("#playlist_stress").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
-      $("#custom_stack_title").text("Stress-Reduction");
+      $("#custom_stack_title").text(stressTitle);
 
     } else if (subcategory_param == 'mood') {
       console.log("mood = true");
       // Checklist section
-      $("#checklist_title").text("Mood-Boosting");
+      $("#checklist_title").text(moodTitle);
       // Noots section
-      $("#noots_products_title").text("Mood-Boosting");
+      $("#noots_products_title").text(moodTitle);
       $("#noots_products_subheading").text("Noots subheading");
       $("#products_focus, #products_memory, #products_stress").hide();
       $("#products_mood").show();
@@ -177,18 +165,18 @@ $(document).ready(function() {
       $("#ebook_title").text("Boost your Mood");
       $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
-      $("#playlist_title").text("Mood-Boosting");
+      $("#playlist_title").text(moodTitle);
       $("#playlist_focus, #playlist_memory, #playlist_stress").hide();
       $("#playlist_mood").show();
       // Masterclass section
       $("#masterclass_subheading").text("Masterclass subheading");
       // Custom Stack section
-      $("#custom_stack_title").text("Mood-Boosting");
+      $("#custom_stack_title").text(moodTitle);
 
     } else if (subcategory_param == 'other') {
       console.log("other = true");
       console.log("hiding Noots section");
-      $("#noots_block").hide();
+      $("#noots_block, #checklist_noots").hide();
       console.log("other = true, moving custom stack to top");
       $("#custom_stack_block").insertAfter("#checklist");
       // Make line visible in block as it move up
@@ -217,6 +205,28 @@ $(document).ready(function() {
       // Show coaching at top, hide everything else
       // Need to update checklist
     }
+
+    // Coaching logic
+    if (coaching_param == 'yes') {
+      console.log("coaching = true");
+      $("#custom_stack_block").insertAfter("#checklist");
+      $("#checklist_customStack").show();
+      // Make line visible in block as it move up
+      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
+      // Else if??
+    } // else if (coaching_param == 'no') {
+      // $("#checklist_customStack, #custom_stack_block").hide();
+    // }
+
+    if (masterclass_param == 'yes') {
+      console.log("masterclass = true");
+      $("#checklist_masterclass, #masterclass_block").show();
+      // Make line visible in block as it move up
+      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
+      // Else if??
+    } // else {
+      // $("#checklist_masterclass, #masterclass_block").hide();
+    // }
 
 });
 
