@@ -1,15 +1,4 @@
-<!-- Custom JS / Jquery script -->
-<!-- Uses a Github repo + JSDeliver CDN -->
-<!--
-<script src="https://cdn.jsdelivr.net/gh/hapi-co/ergogenic-personalisation/personalise.js"></script>
--->
-
-<!-- See index.html for URL params -->
-
-
-<!-- REMEMBER TO PUT ALL THE BELOW IN <script></script> when in Webflow -->
-
-    $(document).ready(function() {
+$(document).ready(function() {
     console.log("Document ready - logic script running!");
     console.log("External script loaded");
 
