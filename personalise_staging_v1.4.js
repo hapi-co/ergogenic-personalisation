@@ -9,8 +9,9 @@
 
 <!-- REMEMBER TO PUT ALL THE BELOW IN <script></script> when in Webflow -->
 
-    $( document ).ready(function() {
+    $(document).ready(function() {
     console.log( "Document ready - logic script running!" );
+    console.log( "External script loaded" );
 
     // Get URL & paramaters
     const urlParams = new URLSearchParams(window.location.search);
@@ -43,6 +44,16 @@
     const experience_param = urlParams.get('experience');
     console.log("experience =", experience_param);
 
+    // Coaching values
+    // Values: yes, no
+    const coaching_param = urlParams.get('coaching');
+    console.log("coaching =", coaching_param);
+
+    // Masterclass values
+    // Values: yes, no
+    const masterclass_param = urlParams.get('masterclass');
+    console.log("masterclass =", masterclass_param);
+
     // Update name
     var name_string = urlParams.get('name'); // NULL
     console.log("Update name to:",name_string);
@@ -54,7 +65,7 @@
     console.log("Update category to:", category_string);
     $("#category").text(category_string);
 
-    // Experience / level of optimisation from 1-3
+    // Optimised - from 1-3
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
       $("#optimised_01").css('opacity', '1');
@@ -93,6 +104,27 @@
       // #masterclass_block
     // Custom Stack section
       // #custom_stack_block
+
+      // #noots_block
+      // #ebook_block
+      // #playlist_block
+      // #masterclass_block
+      // #custom_stack_block
+
+    if (coaching_param == 'yes') {
+      console.log("coaching = true");
+      $("#custom_stack_block").insertAfter("#checklist");
+      // Make line visible in block as it move up
+      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
+      // Else if??
+    }
+
+    if (masterclass_param == 'yes') {
+      console.log("masterclass = true");
+      // Make line visible in block as it move up
+      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
+      // Else if??
+    }
 
     // Subcategory focus area
     if (subcategory_param == 'focus') {
@@ -199,10 +231,40 @@
       console.log("other = true");
       console.log("hiding Noots section");
       $("#noots_block").hide();
-      // Show 1-1 coaching / cust stack service
-      // Figure out how to MOVE cust stack to Noots sect, or duplicate sect & use classes instead of IDs on both so it's seamless. But still, there will be a ton of varients... what is a simple solution here?
-      // Do I need to interact w/ the DOM?
-      // Ask Timon, maybe?
+      console.log("other = true, moving custom stack to top");
+      $("#custom_stack_block").insertAfter("#checklist");
+      // Make line visible in block as it move up
+      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
+    }
+
+    // $("#id").show();
+    // $("#id").hide();
+      // #noots_block
+      // #ebook_block
+      // #playlist_block
+      // #masterclass_block
+      // #custom_stack_block
+
+    // Experience
+    if (experience_param == 'fresh') {
+      console.log("experience = fresh");
+      console.log("show: ebook, playlist, masterclass & hide custom noots");
+      $("#ebook_block, #playlist_block, #masterclass_block").show();
+      $("#custom_stack_block").hide();
+
+    } else if (experience_param == 'avg') {
+      // Show Ebook, Custom Stack, Masterclass
+      console.log("experience = avg");
+      console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
+      $("#ebook_block, #custom_stack_block, #masterclass_block").show();
+      $("#noots_block, #playlist_block").hide();
+
+    } else if (experience_param == 'expert') {
+      console.log("experience = expert");
+      console.log("show: custom stack, hide all else");
+      $("#custom_stack_block").show();
+      $("#noots_block, #ebook_block, #playlist_block, #masterclass_block").hide();
+      // Show coaching at top, hide everything else
     }
 
 });
