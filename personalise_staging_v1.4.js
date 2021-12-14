@@ -57,22 +57,22 @@ $(document).ready(function() {
     // Optimised - from 1-3
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
-      $("#optimised_01").css('opacity', '1');
-      $("#optimised_02").css('opacity', '0.5');
-      $("#optimised_03").css('opacity', '0.5');
-      $("#optimised_01").css('border', '4px solid #395C56');
+      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #395C56'});
+      $("#optimised_02, #optimised_03").css('opacity', '0.5');
+      console.log("Multiple jQuery CSS property = working");
+      // $("#optimised_01").css('border', '4px solid #395C56');
+
+      $('#message').css({ width: 550, height: 300, 'font-size': '8pt' });
 
     } else if (optimised_param == 'somewhat') {
       console.log("Optimised = Somewhat");
-      $("#optimised_01").css('opacity', '0.5');
+      $("#optimised_01, #optimised_03").css('opacity', '0.5');
       $("#optimised_02").css('opacity', '1');
-      $("#optimised_03").css('opacity', '0.5');
       $("#optimised_02").css('border', '4px solid #395C56');
 
     } else if (optimised_param == 'psychonaut') {
       console.log("Optimised: Psychonaut = true");
-      $("#optimised_01").css('opacity', '0.5');
-      $("#optimised_02").css('opacity', '0.5');
+      $("#optimised_01, #optimised_02").css('opacity', '0.5');
       $("#optimised_03").css('opacity', '1');
       $("#optimised_03").css('border', '4px solid #395C56');
     }
