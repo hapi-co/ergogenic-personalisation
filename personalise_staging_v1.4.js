@@ -10,8 +10,8 @@
 <!-- REMEMBER TO PUT ALL THE BELOW IN <script></script> when in Webflow -->
 
     $(document).ready(function() {
-    console.log( "Document ready - logic script running!" );
-    console.log( "External script loaded" );
+    console.log("Document ready - logic script running!");
+    console.log("External script loaded");
 
     // Get URL & paramaters
     const urlParams = new URLSearchParams(window.location.search);
