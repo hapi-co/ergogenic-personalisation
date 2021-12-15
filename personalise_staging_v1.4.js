@@ -100,7 +100,6 @@ $(document).ready(function() {
       $("#products_memory, #products_stress, #products_mood").hide();
       // Ebook section
       $("#ebook_title").text("Improve Focus");
-      $("#playlist_subtitle").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(focusTitle);
       $("#playlist_subtitle").text(subcategory_param);
@@ -125,7 +124,6 @@ $(document).ready(function() {
       $("#products_memory").show();
       // Ebook section
       $("#ebook_title").text("Improve Memory");
-      $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(memoryTitle);
       $("#playlist_subtitle").text(subcategory_param);
@@ -150,7 +148,6 @@ $(document).ready(function() {
       $("#products_stress").show();
       // Ebook section
       $("#ebook_title").text("Reduce Stress");
-      $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(stressTitle);
       $("#playlist_subtitle").text(subcategory_param);
@@ -175,7 +172,6 @@ $(document).ready(function() {
       $("#products_mood").show();
       // Ebook section
       $("#ebook_title").text("Boost your Mood");
-      $("#ebook_subheading").text("Ebook subheading");
       // Playlist section
       $("#playlist_title").text(moodTitle);
       $("#playlist_subtitle").text(subcategory_param);
