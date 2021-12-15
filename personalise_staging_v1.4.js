@@ -140,7 +140,7 @@ $(document).ready(function() {
     } else if (subcategory_param == 'stress') {
       console.log("stress = true");
       // Checklist section
-      $("#checklist_title").text("stressTitle");
+      $("#checklist_title").text(stressTitle);
       // Noots section
       $("#noots_products_title").text(stressTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
@@ -151,6 +151,7 @@ $(document).ready(function() {
       // Playlist section
       $("#playlist_title").text(stressTitle);
       $("#playlist_subtitle").text(subcategory_param);
+      $("#playlist_subtitle_boost").text("reduce");
       $("#playlist_focus, #playlist_memory, #playlist_mood").hide();
       $("#playlist_stress").show();
       // Masterclass section
