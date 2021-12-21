@@ -61,6 +61,14 @@ $(document).ready(function() {
     var moodTitle = "Mood Boosting";
 
     // Optimised - from 1-3
+    // Struggling
+    var optimisedTitle01 = "Cunt";
+    var optimisedTitle02 = "Average";
+    var optimisedTitle03 = "Psychonaut";
+    $(".optimisedTitle_01").text(optimisedTitle01);
+    $(".optimisedTitle_02").text(optimisedTitle02);
+    $(".optimisedTitle_03").text(optimisedTitle03);
+
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
       $("#optimised_01").css({'opacity': '1', 'border': '4px solid #395C56'});
@@ -230,16 +238,6 @@ $(document).ready(function() {
       // Else if??
     } // else if (coaching_param == 'no') {
       // $("#checklist_customStack, #custom_stack_block").hide();
-    // }
-
-    // if (masterclass_param == 'yes') {
-      // console.log("masterclass = true");
-      // $("#checklist_masterclass, #masterclass_block").show();
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-      // Else if??
-    // } // else {
-      // $("#checklist_masterclass, #masterclass_block").hide();
     // }
 
 });
