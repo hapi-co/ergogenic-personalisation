@@ -61,15 +61,8 @@ $(document).ready(function() {
     var moodTitle = "Mood Boosting";
 
     // Optimised - from 1-3
-    var optimisedTitle01 = "Struggling";
-    console.log(optimisedTitle01);
-    var optimisedTitle02 = "Average";
-    console.log(optimisedTitle02);
-    var optimisedTitle03 = "Psychonaut";
-    console.log(optimisedTitle03);
-    $(".margin_0.optimisedTitle_01").text(optimisedTitle01);
-    $(".margin_0.optimisedTitle_02").text(optimisedTitle02);
-    $(".margin_0.optimisedTitle_03").text(optimisedTitle03);
+    
+
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
       $("#optimised_01").css({'opacity': '1', 'border': '4px solid #395C56'});
