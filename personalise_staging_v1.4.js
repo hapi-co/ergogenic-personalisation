@@ -61,7 +61,15 @@ $(document).ready(function() {
     var moodTitle = "Mood Boosting";
 
     // Optimised - from 1-3
-    
+    var optimisedTitle01 = "Struggling 01";
+    console.log(optimisedTitle01);
+    var optimisedTitle02 = "Average 02";
+    console.log(optimisedTitle02);
+    var optimisedTitle03 = "Psychonaut 03";
+    console.log(optimisedTitle03);
+    $(".margin_0.optimisedTitle_01").text(optimisedTitle01);
+    $(".margin_0.optimisedTitle_02").text(optimisedTitle02);
+    $(".margin_0.optimisedTitle_03").text(optimisedTitle03);
 
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
