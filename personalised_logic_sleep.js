@@ -44,29 +44,25 @@ $(document).ready(function() {
     console.log("coaching =", coaching_param);
 
     // Update category
-    var category_string = urlParams.get('category');
+    const category_string = urlParams.get('category');
     console.log("Update category to:", category_string);
     $("#category").text(category_string);
 
     // Content
-    var mainTitle = "sleep enhancement";
-    var latencyTitle = "falling asleep quicker";
-    var continuityTitle = "staying asleep longer";
-    var remTitle = "boosting REM sleep";
-    var deepTitle = "boosting deep sleep";
+    const mainTitle = "sleep enhancement";
+    const latencyTitle = "falling asleep quicker";
+    const continuityTitle = "staying asleep longer";
+    const remTitle = "boosting REM sleep";
+    const deepTitle = "boosting deep sleep";
     const latencyVal = "latency";
-    console.log("latencyVal =", latencyVal);
     const continuityVal = "continuity";
-    console.log("continuityVal =", continuityVal);
     const remVal = "rem";
-    console.log("remVal =", remVal);
     const deepVal = "deep";
-    console.log("deepVal =", deepVal);
 
     // Optimised - from 1-3
-    var optimisedTitle01 = "Not Very";
-    var optimisedTitle02 = "Somewhat";
-    var optimisedTitle03 = "Very";
+    const optimisedTitle01 = "Not Very";
+    const optimisedTitle02 = "Somewhat";
+    const optimisedTitle03 = "Very";
     $(".margin_0.optimisedtitle_01").text(optimisedTitle01);
     $(".margin_0.optimisedtitle_02").text(optimisedTitle02);
     $(".margin_0.optimisedtitle_03").text(optimisedTitle03);
@@ -90,108 +86,85 @@ $(document).ready(function() {
 
     // Subcategory focus area
     if (subcategory_param == 'latency') {
-
       // Checklist section
       $("#checklist_title").text(mainTitle);
-
       // Noots section
       $("#noots_products_title").text(latencyTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_latency").show();
       $("#products_continuity, #products_rem, #products_deep").hide();
-
       // Playlist section
       $("#playlist_latency").show();
       $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
-
       // Masterclass section
       $("#masterclassModule_latency").show();
       $("#masterclassModule_continuity, #masterclassModule_rem, #masterclassModule_deep").hide();
-
       // Custom Stack section
       // $("#custom_stack_title").text(focusTitle);
       $("#customStackBanner_latency").show();
       $("#customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
 
     } else if (subcategory_param == 'continuity') {
-
       // Checklist section
       $("#checklist_title").text(mainTitle);
-
       // Noots section
       $("#noots_products_title").text(continuityTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_continuity").show();
       $("#products_latency, #products_rem, #products_deep").hide();
-
       // Playlist section
       $("#playlist_continuity").show();
       $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
-
       // IN FUTURE, HERE IS A MORE EFFICIENT WAY TO APPEND THE _SUBCATEGORY ON END, DYNAMICALLY, NOT MANUALLY
       // $('#playlist_' + latencyVal, '#playlist_' + remVal, '#playlist_' + deepVal).hide();
       // console.log(latencyVal, remVal, deepVal);
       // console.log("dynamic class selector is working!");
-
       // Masterclass section
       $("#masterclassModule_continuity").show();
       $("#masterclassModule_latency, #masterclassModule_rem, #masterclassModule_deep").hide();
-
     // Custom Stack section
       $("#customStackBanner_continuity").show();
       $("#customStackBanner_latency, #customStackBanner_rem, #customStackBanner_deep").hide();
 
     } else if (subcategory_param == 'rem') {
-
       // Checklist section
       $("#checklist_title").text(mainTitle);
-
       // Noots section
       $("#noots_products_title").text(remTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_mood").hide();
       $("#products_stress").show();
-
       // Playlist section
       // $("#playlist_title").text(remTitle);
       // $("#playlist_subtitle").text(subcategory_param);
       // $("#playlist_subtitle_boost").text("reduce");
       $("#playlist_rem").show();
       $("#playlist_latency, #playlist_continuity, #playlist_deep").hide();
-
       // Masterclass section
       $("#masterclassModule_stress").show();
       $("#masterclassModule_focus, #masterclassModule_memory, #masterclassModule_mood").hide();
-
       // Custom Stack section
       $("#custom_stack_title").text(remTitle);
       $("#customStackBanner_stress").show();
       $("#customStackBanner_memory, #customStackBanner_focus, #customStackBanner_mood").hide();
 
-      $("#masterclassModule_rem").show();
-      $("#masterclassModule_continuity, #masterclassModule_rem, #masterclassModule_deep").hide();
-
     } else if (subcategory_param == 'deep') {
 
       // Checklist section
       $("#checklist_title").text(mainTitle);
-
       // Noots section
       $("#noots_products_title").text(deepTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_stress").hide();
       $("#products_mood").show();
-
       // Playlist section
       // $("#playlist_title").text(deepTitle);
       // $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_deep").show();
       $("#playlist_continuity, #playlist_latency, #playlist_rem").hide();
-
       // Masterclass section
       $("#masterclass_modules_mood").show();
       $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_memory").hide();
-
       // Custom Stack section
       $("#custom_stack_title").text(deepTitle);
       $("#customStackBanner_mood").show();
@@ -233,11 +206,11 @@ $(document).ready(function() {
 jQuery("#playVideo").on('click', function() {
    setTimeout(
        function() {
-         // var vi = jQuery("#iframe");
-         // vi.attr("src", vi.data("autoplay-src"));
-         $("#wistia_responsive_padding").css({ opacity: 1 });
-         ("#wistia_responsive_padding").css({ paddingBottom: "56.25%" });
-         $("#wistia_responsive_wrapper").css({ height: "100%" });
+         var vi = jQuery("#iframe");
+         vi.attr("src", vi.data("autoplay-src"));
+         $(".embed-container").css({ opacity: 1 });
+         $(".embed-container").css({ height: "100%" });
+         $(".embed-container").css({ paddingBottom: "56.25%" });
        },
        // Num of miliseconds to hide for. 1,000 = 1 sec.
        350);
