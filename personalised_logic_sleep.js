@@ -5,6 +5,9 @@ $(document).ready(function() {
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams);
 
+    var bannerName = "banner";
+    $("#banner"+bannerName).css("background-color", "red");
+
     // Name values
     // Values: dynamic
     // const name_param = urlParams.get('name');
