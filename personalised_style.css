@@ -1,0 +1,5 @@
+@media only screen and (min-device-width: 900px) and (max-device-width: 1590px) {
+  .h1_scalable, .marginbottom_20 {
+    max-width: 800px !important;
+  }
+}
