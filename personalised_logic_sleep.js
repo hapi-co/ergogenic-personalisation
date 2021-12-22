@@ -5,8 +5,8 @@ $(document).ready(function() {
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams);
 
-    var bannerName = "banner";
-    $("#banner"+bannerName).css("background-color", "red");
+    var bannerName = "Banner";
+    $("#hero"+bannerName).css("background-color", "red");
     console.log("set hero bkg to red");
 
     // Name values
