@@ -5,9 +5,10 @@ $(document).ready(function() {
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams);
 
-    var bannerName = "Banner";
-    $("#hero"+bannerName).css("background-color", "red");
-    console.log("set hero bkg to red");
+    // Dynamic class selector test
+    // var bannerName = "Banner";
+    // $("#hero"+bannerName).css("background-color", "red");
+    // console.log("set hero bkg to red");
 
     // Name values
     // Values: dynamic
@@ -97,7 +98,8 @@ $(document).ready(function() {
 
       // Playlist section
       $("#playlist_latency").show();
-      $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
+      // $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
+      $(["#playlist_"+continuityVal], ["#playlist_"+remVal], ["#playlist_"+deepVal]).hide();
 
       // Masterclass section
       $("#masterclassModule_latency").show();
@@ -124,8 +126,8 @@ $(document).ready(function() {
       // $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
 
       // IN FUTURE, HERE IS A MORE EFFICIENT WAY TO APPEND THE _SUBCATEGORY ON END, DYNAMICALLY, NOT MANUALLY
-      $("#playlist_" + latencyVal, "#playlist_" + remVal, "#playlist_" + deepVal).hide();
-      console.log(latencyVal, remVal, deepVal);
+      $("#playlist_"+latencyVal, "#playlist_"+remVal, "#playlist_"+deepVal).hide();
+      console.log(hide: latencyVal, remVal, deepVal);
       console.log("dynamic class selector is working!");
 
       // Masterclass section
