@@ -54,10 +54,14 @@ $(document).ready(function() {
     var continuityTitle = "staying asleep longer";
     var remTitle = "boosting REM sleep";
     var deepTitle = "boosting deep sleep";
-    var latencyVal = "latency";
-    var continuityVal = "continuity";
-    var remVal = "rem";
-    var deepVal = "deep";
+    const latencyVal = "latency";
+    console.log("latencyVal =", latencyVal);
+    const continuityVal = "continuity";
+    console.log("continuityVal =", continuityVal);
+    const remVal = "rem";
+    console.log("remVal =", remVal);
+    const deepVal = "deep";
+    console.log("deepVal =", deepVal);
 
     // Optimised - from 1-3
     var optimisedTitle01 = "Not Very";
