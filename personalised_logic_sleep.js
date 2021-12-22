@@ -130,7 +130,7 @@ $(document).ready(function() {
       // $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
 
       // IN FUTURE, HERE IS A MORE EFFICIENT WAY TO APPEND THE _SUBCATEGORY ON END, DYNAMICALLY, NOT MANUALLY
-      $("#playlist_"+latencyVal, "#playlist_"+remVal, "#playlist_"+deepVal).hide();
+      $('#playlist_' + latencyVal, '#playlist_' + remVal, '#playlist_' + deepVal).hide();
       console.log(latencyVal, remVal, deepVal);
       console.log("dynamic class selector is working!");
 
