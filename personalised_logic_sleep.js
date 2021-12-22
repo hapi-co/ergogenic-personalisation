@@ -102,8 +102,7 @@ $(document).ready(function() {
 
       // Playlist section
       $("#playlist_latency").show();
-      // $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
-      $(["#playlist_"+continuityVal], ["#playlist_"+remVal], ["#playlist_"+deepVal]).hide();
+      $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
 
       // Masterclass section
       $("#masterclassModule_latency").show();
@@ -127,12 +126,12 @@ $(document).ready(function() {
 
       // Playlist section
       $("#playlist_continuity").show();
-      // $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
+      $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
 
       // IN FUTURE, HERE IS A MORE EFFICIENT WAY TO APPEND THE _SUBCATEGORY ON END, DYNAMICALLY, NOT MANUALLY
-      $('#playlist_' + latencyVal, '#playlist_' + remVal, '#playlist_' + deepVal).hide();
-      console.log(latencyVal, remVal, deepVal);
-      console.log("dynamic class selector is working!");
+      // $('#playlist_' + latencyVal, '#playlist_' + remVal, '#playlist_' + deepVal).hide();
+      // console.log(latencyVal, remVal, deepVal);
+      // console.log("dynamic class selector is working!");
 
       // Masterclass section
       $("#masterclassModule_continuity").show();
@@ -158,7 +157,7 @@ $(document).ready(function() {
       // $("#playlist_subtitle").text(subcategory_param);
       // $("#playlist_subtitle_boost").text("reduce");
       $("#playlist_rem").show();
-      $("#playlist_continuity, #playlist_memory, #playlist_mood").hide();
+      $("#playlist_latency, #playlist_continuity, #playlist_deep").hide();
 
       // Masterclass section
       $("#masterclassModule_stress").show();
@@ -186,8 +185,8 @@ $(document).ready(function() {
       // Playlist section
       // $("#playlist_title").text(deepTitle);
       // $("#playlist_subtitle").text(subcategory_param);
-      $("#playlist_focus, #playlist_memory, #playlist_stress").hide();
-      $("#playlist_mood").show();
+      $("#playlist_deep").show();
+      $("#playlist_continuity, #playlist_latency, #playlist_rem").hide();
 
       // Masterclass section
       $("#masterclass_modules_mood").show();
