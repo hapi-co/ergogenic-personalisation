@@ -44,14 +44,15 @@ $(document).ready(function() {
     $("#category").text(category_string);
 
     // Content
-    var mainTitle = "Sleep Enhancement";
+    var mainTitle = "sleep enhancement";
     var latencyTitle = "falling asleep quicker";
     var continuityTitle = "staying asleep longer";
     var remTitle = "boosting REM sleep";
     var deepTitle = "boosting deep sleep";
-
-    // Universal
-    $("#ebook_block").hide();
+    var latencyVal = "latency";
+    var continuityVal = "continuity";
+    var remVal = "rem";
+    var deepVal = "deep";
 
     // Optimised - from 1-3
     var optimisedTitle01 = "Not Very";
@@ -88,20 +89,20 @@ $(document).ready(function() {
       $("#noots_products_title").text(latencyTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_latency").show();
-      $("#products_quality, #products_rem, #products_deep").hide();
+      $("#products_continuity, #products_rem, #products_deep").hide();
 
       // Playlist section
       $("#playlist_latency").show();
-      $("#playlist_quality, #playlist_rem, #playlist_deep").hide();
+      $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
 
       // Masterclass section
       $("#masterclassModule_latency").show();
-      $("#masterclassModule_quality, #masterclassModule_rem, #masterclassModule_deep").hide();
+      $("#masterclassModule_continuity, #masterclassModule_rem, #masterclassModule_deep").hide();
 
       // Custom Stack section
       // $("#custom_stack_title").text(focusTitle);
       $("#customStackBanner_latency").show();
-      $("#customStackBanner_quality, #customStackBanner_rem, #customStackBanner_deep").hide();
+      $("#customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
 
     } else if (subcategory_param == 'continuity') {
 
@@ -111,22 +112,25 @@ $(document).ready(function() {
       // Noots section
       $("#noots_products_title").text(continuityTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
-      $("#products_focus, #products_stress, #products_mood").hide();
-      $("#products_memory").show();
+      $("#products_continuity").show();
+      $("#products_latency, #products_rem, #products_deep").hide();
 
       // Playlist section
-      $("#playlist_title").text(continuityTitle);
-      $("#playlist_subtitle").text(subcategory_param);
-      $("#playlist_focus, #playlist_stress, #playlist_mood").hide();
-      $("#playlist_memory").show();
+      $("#playlist_continuity").show();
+      // $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
+
+      // IN FUTURE, HERE IS A MORE EFFICIENT WAY TO APPEND THE _SUBCATEGORY ON END, DYNAMICALLY, NOT MANUALLY
+      $("#playlist_" + latencyVal, "#playlist_" + remVal, "#playlist_" + deepVal).hide();
+      console.log(latencyVal, remVal, deepVal);
+      console.log("dynamic class selector is working!");
 
       // Masterclass section
-      $("#masterclassModule_memory").show();
-      $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_mood").hide();
+      $("#masterclassModule_continuity").show();
+      $("#masterclassModule_latency, #masterclassModule_rem, #masterclassModule_deep").hide();
 
     // Custom Stack section
       $("#customStackBanner_continuity").show();
-      $("#customStackBanner_focus, #customStackBanner_stress, #customStackBanner_mood").hide();
+      $("#customStackBanner_latency, #customStackBanner_rem, #customStackBanner_deep").hide();
 
     } else if (subcategory_param == 'rem') {
 
@@ -140,11 +144,11 @@ $(document).ready(function() {
       $("#products_stress").show();
 
       // Playlist section
-      $("#playlist_title").text(remTitle);
-      $("#playlist_subtitle").text(subcategory_param);
-      $("#playlist_subtitle_boost").text("reduce");
-      $("#playlist_focus, #playlist_memory, #playlist_mood").hide();
-      $("#playlist_stress").show();
+      // $("#playlist_title").text(remTitle);
+      // $("#playlist_subtitle").text(subcategory_param);
+      // $("#playlist_subtitle_boost").text("reduce");
+      $("#playlist_rem").show();
+      $("#playlist_continuity, #playlist_memory, #playlist_mood").hide();
 
       // Masterclass section
       $("#masterclassModule_stress").show();
@@ -154,6 +158,9 @@ $(document).ready(function() {
       $("#custom_stack_title").text(remTitle);
       $("#customStackBanner_stress").show();
       $("#customStackBanner_memory, #customStackBanner_focus, #customStackBanner_mood").hide();
+
+      $("#masterclassModule_rem").show();
+      $("#masterclassModule_continuity, #masterclassModule_rem, #masterclassModule_deep").hide();
 
     } else if (subcategory_param == 'deep') {
 
@@ -167,8 +174,8 @@ $(document).ready(function() {
       $("#products_mood").show();
 
       // Playlist section
-      $("#playlist_title").text(deepTitle);
-      $("#playlist_subtitle").text(subcategory_param);
+      // $("#playlist_title").text(deepTitle);
+      // $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus, #playlist_memory, #playlist_stress").hide();
       $("#playlist_mood").show();
 
@@ -190,17 +197,17 @@ $(document).ready(function() {
 
     // Experience
     if (experience_param == 'fresh') {
-      $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+      $("#checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
       $("#custom_stack_block, #checklist_customStack").hide();
 
     } else if (experience_param == 'avg') {
       // Show Ebook, Custom Stack, Masterclass
-      $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
+      $("#checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
       // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
 
     } else if (experience_param == 'expert') {
       $("#custom_stack_block, #checklist_customStack").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+      $("#noots_block, #checklist_noots, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Show coaching at top, hide everything else
       // Need to update checklist
     }
