@@ -90,7 +90,6 @@ $(document).ready(function() {
       $("#checklist_title").text(mainTitle);
       // Noots section
       $("#noots_products_title").text(latencyTitle);
-      $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_latency").show();
       $("#products_continuity, #products_rem, #products_deep").hide();
       // Playlist section
@@ -109,7 +108,6 @@ $(document).ready(function() {
       $("#checklist_title").text(mainTitle);
       // Noots section
       $("#noots_products_title").text(continuityTitle);
-      $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_continuity").show();
       $("#products_latency, #products_rem, #products_deep").hide();
       // Playlist section
@@ -131,22 +129,18 @@ $(document).ready(function() {
       $("#checklist_title").text(mainTitle);
       // Noots section
       $("#noots_products_title").text(remTitle);
-      $("#noots_subheadSubcategory").text(subcategory_param);
-      $("#products_focus, #products_memory, #products_mood").hide();
-      $("#products_stress").show();
+      $("#products_rem").show();
+      $("#products_latency, #products_continuity, #products_deep").hide();
       // Playlist section
-      // $("#playlist_title").text(remTitle);
-      // $("#playlist_subtitle").text(subcategory_param);
-      // $("#playlist_subtitle_boost").text("reduce");
       $("#playlist_rem").show();
       $("#playlist_latency, #playlist_continuity, #playlist_deep").hide();
       // Masterclass section
-      $("#masterclassModule_stress").show();
-      $("#masterclassModule_focus, #masterclassModule_memory, #masterclassModule_mood").hide();
+      $("#masterclassModule_rem").show();
+      $("#masterclassModule_latency, #masterclassModule_continuity, #masterclassModule_deep").hide();
       // Custom Stack section
       $("#custom_stack_title").text(remTitle);
-      $("#customStackBanner_stress").show();
-      $("#customStackBanner_memory, #customStackBanner_focus, #customStackBanner_mood").hide();
+      $("#customStackBanner_rem").show();
+      $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_deep").hide();
 
     } else if (subcategory_param == 'deep') {
 
@@ -154,21 +148,18 @@ $(document).ready(function() {
       $("#checklist_title").text(mainTitle);
       // Noots section
       $("#noots_products_title").text(deepTitle);
-      $("#noots_subheadSubcategory").text(subcategory_param);
-      $("#products_focus, #products_memory, #products_stress").hide();
-      $("#products_mood").show();
+      $("#products_deep").show();
+      $("#products_latency, #products_continuity, #products_rem").hide();
       // Playlist section
-      // $("#playlist_title").text(deepTitle);
-      // $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_deep").show();
-      $("#playlist_continuity, #playlist_latency, #playlist_rem").hide();
+      $("#playlist_latency, #playlist_continuity, #playlist_rem").hide();
       // Masterclass section
-      $("#masterclass_modules_mood").show();
-      $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_memory").hide();
+      $("#masterclass_modules_deep").show();
+      $("#masterclassModule_latency, #masterclassModule_continuity, #masterclassModule_rem").hide();
       // Custom Stack section
       $("#custom_stack_title").text(deepTitle);
-      $("#customStackBanner_mood").show();
-      $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_focus").hide();
+      $("#customStackBanner_deeo").show();
+      $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_rem").hide();
 
     } else if (subcategory_param == 'other') {
       $("#noots_block, #checklist_noots").hide();
