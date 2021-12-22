@@ -24,7 +24,7 @@ $(document).ready(function() {
     console.log("category =", category_param);
 
     // Subcategory values
-    // Values: focus, memory, stress, mood, other
+    // Values: latency, continuity, REM, deep, other
     const subcategory_param = urlParams.get('subcategory');
     console.log("subcategory =", subcategory_param);
 
@@ -44,82 +44,77 @@ $(document).ready(function() {
     $("#category").text(category_string);
 
     // Content
-    var focusTitle = "Focus Enhancement";
-    var memoryTitle = "Memory Enhancement";
-    var stressTitle = "Stress Reduction";
-    var moodTitle = "Mood Boosting";
+    var mainTitle = "Sleep Enhancement";
+    var latencyTitle = "Falling Asleep Quicker";
+    var continuityTitle = "Staying Asleep Longer";
+    var remTitle = "Boosting REM Sleep";
+    var deepTitle = "Boosting Deep Sleep";
+
+    // Universal
+    $("#ebook_block").hide();
 
     // Optimised - from 1-3
-    var optimisedTitle01 = "Struggling";
-    var optimisedTitle02 = "Average";
-    var optimisedTitle03 = "Psychonaut";
+    var optimisedTitle01 = "Not Very";
+    var optimisedTitle02 = "Somewhat";
+    var optimisedTitle03 = "Very";
     $(".margin_0.optimisedtitle_01").text(optimisedTitle01);
     $(".margin_0.optimisedtitle_02").text(optimisedTitle02);
     $(".margin_0.optimisedtitle_03").text(optimisedTitle03);
 
     if (optimised_param == 'notvery') {
       console.log("Optimised: Not Very = true");
-      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #395C56'});
+      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #577ad1'});
       $("#optimised_02, #optimised_03").css('opacity', '0.5');
       console.log("Multiple jQuery CSS property = working");
 
     } else if (optimised_param == 'somewhat') {
       console.log("Optimised = Somewhat");
       $("#optimised_01, #optimised_03").css('opacity', '0.5');
-      $("#optimised_02").css({'opacity': '1', 'border': '4px solid #395C56'});
+      $("#optimised_02").css({'opacity': '1', 'border': '4px solid #577ad1'});
 
     } else if (optimised_param == 'psychonaut') {
       console.log("Optimised: Psychonaut = true");
       $("#optimised_01, #optimised_02").css('opacity', '0.5');
-      $("#optimised_03").css({'opacity': '1', 'border': '4px solid #395C56'});
+      $("#optimised_03").css({'opacity': '1', 'border': '4px solid #577ad1'});
     }
 
-    // Global
-      // #noots_block
-      // #ebook_block
-      // #playlist_block
-      // #masterclass_block
-      // #custom_stack_block
-
-    // Checklist IDs
-      // #checklist_noots, #checklist_ebook, #checklist_playlist, #checklist_masterclass, #checklist_customStack
-
     // Subcategory focus area
-    if (subcategory_param == 'focus') {
-      console.log("focus = true");
+    if (subcategory_param == 'latency') {
       // Checklist section
-      $("#checklist_title").text(focusTitle);
+      $("#checklist_title").text(mainTitle);
+
       // Noots section
-      $("#noots_products_title").text("Focus");
+      $("#noots_products_title").text(latencyTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
-      $("#products_focus").show();
-      $("#products_memory, #products_stress, #products_mood").hide();
+      $("#products_latency").show();
+      $("#products_quality, #products_rem, #products_deep").hide();
       // Ebook section
-      $("#ebook_title").text("Improve Focus");
+      // $("#ebook_title").text("Improve Focus");
+
       // Playlist section
-      $("#playlist_title").text(focusTitle);
-      $("#playlist_subtitle").text(subcategory_param);
-      $("#playlist_focus").show();
-      $("#playlist_memory, #playlist_stress, #playlist_mood").hide();
+      // $("#playlist_title").text(mainTitle);
+      $("#playlist_latency").show();
+      $("#playlist_quality, #playlist_rem, #playlist_deep").hide();
+
       // Masterclass section
-      $("#masterclassModule_focus").show();
-      $("#masterclassModule_memory, #masterclassModule_stress, #masterclassModule_mood").hide();
+      $("#masterclassModule_latency").show();
+      $("#masterclassModule_quality, #masterclassModule_rem, #masterclassModule_deep").hide();
+
       // Custom Stack section
       $("#custom_stack_title").text(focusTitle);
       $("#customStackBanner_focus").show();
       $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_mood").hide();
 
-    } else if (subcategory_param == 'memory') {
-      console.log("memory = true");
+    } else if (subcategory_param == 'continuity') {
       // Checklist section
-      $("#checklist_title").text(memoryTitle);
+      $("#checklist_title").text(mainTitle);
       // Noots section
-      $("#noots_products_title").text("Memory");
+      $("#noots_products_title").text(continuityTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_stress, #products_mood").hide();
       $("#products_memory").show();
       // Ebook section
-      $("#ebook_title").text("Improve Memory");
+      // $("#ebook_title").text("Improve Memory");
       // Playlist section
       $("#playlist_title").text(memoryTitle);
       $("#playlist_subtitle").text(subcategory_param);
@@ -133,17 +128,16 @@ $(document).ready(function() {
       $("#customStackBanner_memory").show();
       $("#customStackBanner_focus, #customStackBanner_stress, #customStackBanner_mood").hide();
 
-    } else if (subcategory_param == 'stress') {
-      console.log("stress = true");
+    } else if (subcategory_param == 'rem') {
       // Checklist section
-      $("#checklist_title").text(stressTitle);
+      $("#checklist_title").text(mainTitle);
       // Noots section
-      $("#noots_products_title").text(stressTitle);
+      $("#noots_products_title").text(remTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_mood").hide();
       $("#products_stress").show();
       // Ebook section
-      $("#ebook_title").text("Reduce Stress");
+      // $("#ebook_title").text("Reduce Stress");
       // Playlist section
       $("#playlist_title").text(stressTitle);
       $("#playlist_subtitle").text(subcategory_param);
@@ -158,17 +152,16 @@ $(document).ready(function() {
       $("#customStackBanner_stress").show();
       $("#customStackBanner_memory, #customStackBanner_focus, #customStackBanner_mood").hide();
 
-    } else if (subcategory_param == 'mood') {
-      console.log("mood = true");
+    } else if (subcategory_param == 'deep') {
       // Checklist section
-      $("#checklist_title").text(moodTitle);
+      $("#checklist_title").text(mainTitle);
       // Noots section
-      $("#noots_products_title").text(moodTitle);
+      $("#noots_products_title").text(deepTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_stress").hide();
       $("#products_mood").show();
       // Ebook section
-      $("#ebook_title").text("Boost your Mood");
+      // $("#ebook_title").text("Boost your Mood");
       // Playlist section
       $("#playlist_title").text(moodTitle);
       $("#playlist_subtitle").text(subcategory_param);
@@ -183,10 +176,7 @@ $(document).ready(function() {
       $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_focus").hide();
 
     } else if (subcategory_param == 'other') {
-      console.log("other = true");
-      console.log("hiding Noots section");
       $("#noots_block, #checklist_noots").hide();
-      console.log("other = true, moving custom stack to top");
       $("#custom_stack_block").insertAfter("#checklist");
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
@@ -194,21 +184,15 @@ $(document).ready(function() {
 
     // Experience
     if (experience_param == 'fresh') {
-      console.log("experience = fresh");
-      console.log("show: ebook, playlist, masterclass & hide custom noots");
       $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
       $("#custom_stack_block, #checklist_customStack").hide();
 
     } else if (experience_param == 'avg') {
       // Show Ebook, Custom Stack, Masterclass
-      console.log("experience = avg");
-      console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
       $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
       // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
 
     } else if (experience_param == 'expert') {
-      console.log("experience = expert");
-      console.log("show: custom stack, hide all else");
       $("#custom_stack_block, #checklist_customStack").show();
       $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Show coaching at top, hide everything else
@@ -217,29 +201,21 @@ $(document).ready(function() {
 
     // Coaching logic
     if (coaching_param == 'yes') {
-      console.log("coaching = true");
       $("#checklist_customStack, #custom_stack_block").show();
       $("#custom_stack_block").insertAfter("#checklist");
-      // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-      // Else if??
-    } // else if (coaching_param == 'no') {
-      // $("#checklist_customStack, #custom_stack_block").hide();
-    // }
+    }
 
 });
 
 // Masterclass custom thumbnail, video-expander and responsive YT embed
 jQuery("#playVideo").on('click', function() {
-   console.log("clicked video thumb...waiting...");
    setTimeout(
        function() {
-         var vi = jQuery("#iframe");
-         vi.attr("src", vi.data("autoplay-src"));
-         $(".embed-container").css({ opacity: 1 });
-         $(".embed-container").css({ height: "100%" });
-         $(".embed-container").css({ paddingBottom: "56.25%" });
+         // var vi = jQuery("#iframe");
+         // vi.attr("src", vi.data("autoplay-src"));
+         $("#wistia_responsive_padding").css({ opacity: 1 });
+         ("#wistia_responsive_padding").css({ paddingBottom: "56.25%" });
+         $("#wistia_responsive_wrapper").css({ height: "100%" });
        },
        // Num of miliseconds to hide for. 1,000 = 1 sec.
        350);
