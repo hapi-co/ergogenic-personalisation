@@ -45,10 +45,10 @@ $(document).ready(function() {
 
     // Content
     var mainTitle = "Sleep Enhancement";
-    var latencyTitle = "Falling Asleep Quicker";
-    var continuityTitle = "Staying Asleep Longer";
-    var remTitle = "Boosting REM Sleep";
-    var deepTitle = "Boosting Deep Sleep";
+    var latencyTitle = "falling asleep quicker";
+    var continuityTitle = "staying asleep longer";
+    var remTitle = "boosting REM sleep";
+    var deepTitle = "boosting deep sleep";
 
     // Universal
     $("#ebook_block").hide();
@@ -80,6 +80,7 @@ $(document).ready(function() {
 
     // Subcategory focus area
     if (subcategory_param == 'latency') {
+
       // Checklist section
       $("#checklist_title").text(mainTitle);
 
@@ -88,11 +89,8 @@ $(document).ready(function() {
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_latency").show();
       $("#products_quality, #products_rem, #products_deep").hide();
-      // Ebook section
-      // $("#ebook_title").text("Improve Focus");
 
       // Playlist section
-      // $("#playlist_title").text(mainTitle);
       $("#playlist_latency").show();
       $("#playlist_quality, #playlist_rem, #playlist_deep").hide();
 
@@ -101,77 +99,85 @@ $(document).ready(function() {
       $("#masterclassModule_quality, #masterclassModule_rem, #masterclassModule_deep").hide();
 
       // Custom Stack section
-      $("#custom_stack_title").text(focusTitle);
-      $("#customStackBanner_focus").show();
-      $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_mood").hide();
+      // $("#custom_stack_title").text(focusTitle);
+      $("#customStackBanner_latency").show();
+      $("#customStackBanner_quality, #customStackBanner_rem, #customStackBanner_deep").hide();
 
     } else if (subcategory_param == 'continuity') {
+
       // Checklist section
       $("#checklist_title").text(mainTitle);
+
       // Noots section
       $("#noots_products_title").text(continuityTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_stress, #products_mood").hide();
       $("#products_memory").show();
-      // Ebook section
-      // $("#ebook_title").text("Improve Memory");
+
       // Playlist section
-      $("#playlist_title").text(memoryTitle);
+      $("#playlist_title").text(continuityTitle);
       $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus, #playlist_stress, #playlist_mood").hide();
       $("#playlist_memory").show();
+
       // Masterclass section
       $("#masterclassModule_memory").show();
       $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_mood").hide();
-      // Custom Stack section
-      $("#custom_stack_title").text(memoryTitle);
-      $("#customStackBanner_memory").show();
+
+    // Custom Stack section
+      $("#customStackBanner_continuity").show();
       $("#customStackBanner_focus, #customStackBanner_stress, #customStackBanner_mood").hide();
 
     } else if (subcategory_param == 'rem') {
+
       // Checklist section
       $("#checklist_title").text(mainTitle);
+
       // Noots section
       $("#noots_products_title").text(remTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_mood").hide();
       $("#products_stress").show();
-      // Ebook section
-      // $("#ebook_title").text("Reduce Stress");
+
       // Playlist section
-      $("#playlist_title").text(stressTitle);
+      $("#playlist_title").text(remTitle);
       $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_subtitle_boost").text("reduce");
       $("#playlist_focus, #playlist_memory, #playlist_mood").hide();
       $("#playlist_stress").show();
+
       // Masterclass section
       $("#masterclassModule_stress").show();
       $("#masterclassModule_focus, #masterclassModule_memory, #masterclassModule_mood").hide();
+
       // Custom Stack section
-      $("#custom_stack_title").text(stressTitle);
+      $("#custom_stack_title").text(remTitle);
       $("#customStackBanner_stress").show();
       $("#customStackBanner_memory, #customStackBanner_focus, #customStackBanner_mood").hide();
 
     } else if (subcategory_param == 'deep') {
+
       // Checklist section
       $("#checklist_title").text(mainTitle);
+
       // Noots section
       $("#noots_products_title").text(deepTitle);
       $("#noots_subheadSubcategory").text(subcategory_param);
       $("#products_focus, #products_memory, #products_stress").hide();
       $("#products_mood").show();
-      // Ebook section
-      // $("#ebook_title").text("Boost your Mood");
+
       // Playlist section
-      $("#playlist_title").text(moodTitle);
+      $("#playlist_title").text(deepTitle);
       $("#playlist_subtitle").text(subcategory_param);
       $("#playlist_focus, #playlist_memory, #playlist_stress").hide();
       $("#playlist_mood").show();
+
       // Masterclass section
       $("#masterclass_modules_mood").show();
       $("#masterclassModule_focus, #masterclassModule_stress, #masterclassModule_memory").hide();
+
       // Custom Stack section
-      $("#custom_stack_title").text(moodTitle);
+      $("#custom_stack_title").text(deepTitle);
       $("#customStackBanner_mood").show();
       $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_focus").hide();
 
