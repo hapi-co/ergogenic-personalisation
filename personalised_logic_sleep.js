@@ -7,6 +7,7 @@ $(document).ready(function() {
 
     var bannerName = "banner";
     $("#banner"+bannerName).css("background-color", "red");
+    console.log("set hero bkg to red");
 
     // Name values
     // Values: dynamic
