@@ -7,8 +7,6 @@ $(document).ready(function() {
 
     // Name values
     // Values: dynamic
-    // const name_param = urlParams.get('name');
-    // console.log("name =", name_param);
     const name_string = urlParams.get('name'); // NULL
     $("#name").text(name_string);
     console.log("Update name to:",name_string);
@@ -40,8 +38,8 @@ $(document).ready(function() {
 
     // Update category
     var category_string = urlParams.get('category');
-    console.log("Update category to:", category_string);
     $("#category").text(category_string);
+    console.log("Update category to:", category_string);
 
     // Content
     const brainTitle = "Brain Boosting";
@@ -59,42 +57,42 @@ $(document).ready(function() {
     $(".margin_0.optimisedtitle_03").text(optimisedTitle03);
 
     if (optimised_param == 'notvery') {
-      console.log("Optimised: Not Very = true");
       $("#optimised_01").css({'opacity': '1', 'border': '4px solid #395C56'});
       $("#optimised_02, #optimised_03").css('opacity', '0.5');
+      console.log("Optimised: Not Very = true");
       console.log("Multiple jQuery CSS property = working");
 
     } else if (optimised_param == 'somewhat') {
-      console.log("Optimised = Somewhat");
       $("#optimised_01, #optimised_03").css('opacity', '0.5');
       $("#optimised_02").css({'opacity': '1', 'border': '4px solid #395C56'});
+      console.log("Optimised = Somewhat");
 
     } else if (optimised_param == 'psychonaut') {
-      console.log("Optimised: Psychonaut = true");
       $("#optimised_01, #optimised_02").css('opacity', '0.5');
       $("#optimised_03").css({'opacity': '1', 'border': '4px solid #395C56'});
+      console.log("Optimised: Psychonaut = true");
     }
 
     $("#coachingLine").hide();
 
       // Experience
       if (experience_param == 'fresh') {
-        console.log("experience = fresh");
-        console.log("show: ebook, playlist, masterclass & hide custom noots");
         $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
         $("#custom_stack_block, #checklist_customStack").hide();
+        console.log("experience = fresh");
+        console.log("show: ebook, playlist, masterclass & hide custom noots");
 
       } else if (experience_param == 'avg') {
         // Show Ebook, Custom Stack, Masterclass
+        $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
         console.log("experience = avg");
         console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
-        $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
 
       } else if (experience_param == 'expert') {
-        console.log("experience = expert");
-        console.log("show: custom stack, hide all else");
         $("#custom_stack_block, #checklist_customStack").show();
         $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+        console.log("experience = expert");
+        console.log("show: custom stack, hide all else");
       }
 
     // Subcategory focus area
@@ -198,31 +196,31 @@ $(document).ready(function() {
     } else if (subcategory_param == 'other') {
       // Checklist section
       $("#checklist_title").text(brainTitle);
-      console.log("other = true");
-      console.log("hiding Noots section");
       $("#custom_stack_block").insertAfter("#checklist");
       $("#custom_stack_block, #checklist_customStack, #coachingLine, #customStackBanner_focus").show();
       $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine, #customStackBanner_memory, #customStackBanner_stress, #customStackBanner_mood").hide();
       console.log("other = true, moving custom stack to top");
+      console.log("other = true");
+      console.log("hiding Noots section");
     }
 
     // Coaching logic
     if (coaching_param == 'yes') {
       // Checklist section
       $("#checklist_title").text(brainTitle);
-      console.log("coaching = true");
       $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
       $("#noots_block, #checklist_noots, #masterclassLine").hide();
+      console.log("coaching = true");
     } else if (coaching_param == 'no') {
       $("#masterclassLine, #checklist_customStack, #custom_stack_block").hide();
     }
 
     // OVERRIDES
     if (coaching_param == 'yes' && subcategory_param == 'other') {
-      console.log("coaching and category other = true");
       $("#custom_stack_block").show();
       $("#coachingLine").hide();
+      console.log("coaching and category other = true");
     }
 
     if (coaching_param == 'yes' && experience_param == 'expert') {
@@ -232,16 +230,10 @@ $(document).ready(function() {
     }
 
     if (experience_param == 'expert') {
-      console.log("coaching no and experience expert = true");
       $("#checklist_customStack, #custom_stack_block").show();
       $("#coachingLine").hide();
+      console.log("coaching no and experience expert = true");
     }
-
-    // https://www.ergogenic.health/personalisation/brain?name=Johno&optimised=notvery&experience=fresh&category=brain&subcategory=other&coaching=no
-    // https://www.ergogenic.health/personalisation/brain?name=John&optimised=somewhat&experience=fresh&category=brain&subcategory=other&coaching=no
-    // **THIS URL BREAKS THE PAGE** - check if possible to get URL from typeform
-    // If not, no issue.
-    // If yes, need to fix.
 
 });
 
