@@ -231,6 +231,18 @@ $(document).ready(function() {
       $("#coachingLine").hide();
     }
 
+    if (experience_param == 'expert') {
+      console.log("coaching no and experience expert = true");
+      $("#custom_stack_block").show();
+      $("#coachingLine").hide();
+    }
+
+    // https://www.ergogenic.health/personalisation/brain?name=Johno&optimised=notvery&experience=fresh&category=brain&subcategory=other&coaching=no
+    // https://www.ergogenic.health/personalisation/brain?name=John&optimised=somewhat&experience=fresh&category=brain&subcategory=other&coaching=no
+    // **THIS URL BREAKS THE PAGE** - check if possible to get URL from typeform
+    // If not, no issue.
+    // If yes, need to fix.
+
 });
 
 // Masterclass custom thumbnail, video-expander and responsive YT embed
