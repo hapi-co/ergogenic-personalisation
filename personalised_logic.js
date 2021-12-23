@@ -85,6 +85,29 @@ $(document).ready(function() {
     // Checklist IDs
       // #checklist_noots, #checklist_ebook, #checklist_playlist, #checklist_masterclass, #checklist_customStack
 
+      // Experience
+      if (experience_param == 'fresh') {
+        console.log("experience = fresh");
+        console.log("show: ebook, playlist, masterclass & hide custom noots");
+        $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+        $("#custom_stack_block, #checklist_customStack").hide();
+
+      } else if (experience_param == 'avg') {
+        // Show Ebook, Custom Stack, Masterclass
+        console.log("experience = avg");
+        console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
+        $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
+        // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
+
+      } else if (experience_param == 'expert') {
+        console.log("experience = expert");
+        console.log("show: custom stack, hide all else");
+        $("#custom_stack_block, #checklist_customStack").show();
+        $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+        // Show coaching at top, hide everything else
+        // Need to update checklist
+      }
+
     // Subcategory focus area
     if (subcategory_param == 'focus') {
       console.log("focus = true");
@@ -192,29 +215,6 @@ $(document).ready(function() {
       console.log("other = true, moving custom stack to top");
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-    }
-
-    // Experience
-    if (experience_param == 'fresh') {
-      console.log("experience = fresh");
-      console.log("show: ebook, playlist, masterclass & hide custom noots");
-      $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
-      $("#custom_stack_block, #checklist_customStack").hide();
-
-    } else if (experience_param == 'avg') {
-      // Show Ebook, Custom Stack, Masterclass
-      console.log("experience = avg");
-      console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
-      $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
-      // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
-
-    } else if (experience_param == 'expert') {
-      console.log("experience = expert");
-      console.log("show: custom stack, hide all else");
-      $("#custom_stack_block, #checklist_customStack").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-      // Show coaching at top, hide everything else
-      // Need to update checklist
     }
 
     // Coaching logic
