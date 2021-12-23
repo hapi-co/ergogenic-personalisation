@@ -176,7 +176,7 @@ $(document).ready(function() {
     // Coaching logic
     if (coaching_param == 'yes') {
       $("#checklist_title").text(mainTitle);
-      $("#custom_stack_block").insertAfter("#checklist");
+      // $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
       $("#noots_block, #checklist_noots, #masterclassLine").hide();
       console.log("coaching = true");
