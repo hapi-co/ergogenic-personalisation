@@ -228,6 +228,7 @@ $(document).ready(function() {
       $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
       $("#noots_block, #checklist_noots, #masterclassLine").hide();
+
       // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Make line visible in block as it move up
@@ -236,6 +237,11 @@ $(document).ready(function() {
     } // else if (coaching_param == 'no') {
       // $("#checklist_customStack, #custom_stack_block").hide();
     // }
+
+    if (coaching_param == 'yes' && subcategory_param == 'other') {
+      console.log("coaching and category other = true");
+      $("#coachingLine").hide();
+    }
 
 });
 
