@@ -75,16 +75,7 @@ $(document).ready(function() {
       $("#optimised_03").css({'opacity': '1', 'border': '4px solid #395C56'});
     }
 
-    // Global
-      // #noots_block
-      // #ebook_block
-      // #playlist_block
-      // #masterclass_block
-      // #custom_stack_block
     $("#coachingLine").hide();
-
-    // Checklist IDs
-      // #checklist_noots, #checklist_ebook, #checklist_playlist, #checklist_masterclass, #checklist_customStack
 
       // Experience
       if (experience_param == 'fresh') {
@@ -98,15 +89,12 @@ $(document).ready(function() {
         console.log("experience = avg");
         console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
         $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
-        // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
 
       } else if (experience_param == 'expert') {
         console.log("experience = expert");
         console.log("show: custom stack, hide all else");
         $("#custom_stack_block, #checklist_customStack").show();
         $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-        // Show coaching at top, hide everything else
-        // Need to update checklist
       }
 
     // Subcategory focus area
@@ -218,8 +206,6 @@ $(document).ready(function() {
       console.log("other = true, moving custom stack to top");
     }
 
-    // **NEED AN IF & STATEMENT. IF coaching + other, show/hide line**
-
     // Coaching logic
     if (coaching_param == 'yes') {
       // Checklist section
@@ -230,21 +216,16 @@ $(document).ready(function() {
       $("#noots_block, #checklist_noots, #masterclassLine").hide();
     } else if (coaching_param == 'no') {
       $("#masterclassLine, #checklist_customStack, #custom_stack_block").hide();
-      // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-      // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-      // Else if??
-    } // else if (coaching_param == 'no') {
-      // $("#checklist_customStack, #custom_stack_block").hide();
-    // }
+    }
 
+    // OVERRIDES
     if (coaching_param == 'yes' && subcategory_param == 'other') {
       console.log("coaching and category other = true");
+      $("#custom_stack_block").show();
       $("#coachingLine").hide();
     }
 
-    if (coaching_param == 'no' && experience_param == 'expert') {
+    if (coaching_param == 'yes' && experience_param == 'expert') {
       console.log("coaching no and experience expert = true");
       $("#custom_stack_block").show();
       $("#coachingLine").hide();
