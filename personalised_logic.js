@@ -221,6 +221,7 @@ $(document).ready(function() {
     if (coaching_param == 'yes') {
       console.log("coaching = true");
       $("#checklist_customStack, #custom_stack_block").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       $("#custom_stack_block").insertAfter("#checklist");
       // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Make line visible in block as it move up
