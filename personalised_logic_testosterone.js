@@ -157,7 +157,7 @@ $(document).ready(function() {
     // Coaching logic
     if (coaching_param == 'yes') {
       $("#checklist_title").text(mainTitle);
-      $("#custom_stack_block").insertAfter("#checklist");
+      // $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
       $("#noots_block, #checklist_noots, #masterclassLine").hide();
       console.log("coaching = true");
@@ -201,15 +201,3 @@ jQuery("#playVideo").on('click', function() {
        // Num of miliseconds to hide for. 1,000 = 1 sec.
        350);
 });
-
-// Dynamic class selector test
-// var bannerName = "Banner";
-// $("#hero"+bannerName).css("background-color", "red");
-// console.log("set hero bkg to red");
-
-//
-// if (musicTaste == 'Justin Beiber') {
-  // penisSize: "8==D";
-// } else if (musicTaste == 'Black Sabbath') {
-  // penisSize: "8=====================================D";
-// }
