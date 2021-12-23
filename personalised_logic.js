@@ -44,6 +44,7 @@ $(document).ready(function() {
     $("#category").text(category_string);
 
     // Content
+    const brainTitle = "Brain Boosting";
     var focusTitle = "Focus Enhancement";
     var memoryTitle = "Memory Enhancement";
     var stressTitle = "Stress Reduction";
@@ -211,14 +212,14 @@ $(document).ready(function() {
       console.log("hiding Noots section");
       $("#custom_stack_block").insertAfter("#checklist");
       $("#custom_stack_block, #checklist_customStack, #coachingLine").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine").hide();
       console.log("other = true, moving custom stack to top");
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
     }
 
     // Coaching logic
     if (coaching_param == 'yes') {
+      // Checklist section
+      $("#checklist_title").text(brainTitle);
       console.log("coaching = true");
       $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
