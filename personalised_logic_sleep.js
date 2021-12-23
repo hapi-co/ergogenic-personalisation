@@ -84,6 +84,13 @@ $(document).ready(function() {
       $("#optimised_03").css({'opacity': '1', 'border': '4px solid #577ad1'});
     }
 
+    //
+    // if (musicTaste == 'Justin Beiber') {
+      // penisSize: "8==D";
+    // } else if (musicTaste == 'Black Sabbath') {
+      // penisSize: "8=====================================D";
+    // }
+
     // Subcategory focus area
     if (subcategory_param == 'latency') {
       // Checklist section

@@ -80,6 +80,7 @@ $(document).ready(function() {
       // #playlist_block
       // #masterclass_block
       // #custom_stack_block
+    $("#coachingLine").hide();
 
     // Checklist IDs
       // #checklist_noots, #checklist_ebook, #checklist_playlist, #checklist_masterclass, #checklist_customStack
@@ -188,6 +189,7 @@ $(document).ready(function() {
       $("#noots_block, #checklist_noots").hide();
       console.log("other = true, moving custom stack to top");
       $("#custom_stack_block").insertAfter("#checklist");
+      $("#coachingLine").show();
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
     }
