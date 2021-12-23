@@ -233,7 +233,7 @@ $(document).ready(function() {
 
     if (experience_param == 'expert') {
       console.log("coaching no and experience expert = true");
-      $("#custom_stack_block").show();
+      $("#checklist_customStack, #custom_stack_block").show();
       $("#coachingLine").hide();
     }
 
