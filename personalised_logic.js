@@ -244,6 +244,12 @@ $(document).ready(function() {
       $("#coachingLine").hide();
     }
 
+    if (coaching_param == 'no' && experience_param == 'expert') {
+      console.log("coaching no and experience expert = true");
+      $("#custom_stack_block").show();
+      $("#coachingLine").hide();
+    }
+
 });
 
 // Masterclass custom thumbnail, video-expander and responsive YT embed
