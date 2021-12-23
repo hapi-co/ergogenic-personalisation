@@ -221,8 +221,9 @@ $(document).ready(function() {
     if (coaching_param == 'yes') {
       console.log("coaching = true");
       $("#checklist_customStack, #custom_stack_block").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       $("#custom_stack_block").insertAfter("#checklist");
+      $("#noots_block, #checklist_noots").hide();
+      // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
