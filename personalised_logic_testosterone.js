@@ -59,19 +59,19 @@ $(document).ready(function() {
     $(".margin_0.optimisedtitle_03").text(optimisedTitle03);
 
     if (optimised_param == 'notvery') {
-      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #414ea2'});
+      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #6d79c3'});
       $("#optimised_02, #optimised_03").css('opacity', '0.5');
       console.log("Multiple jQuery CSS property = working");
       console.log("Optimised: Not Very = true");
 
     } else if (optimised_param == 'somewhat') {
       $("#optimised_01, #optimised_03").css('opacity', '0.5');
-      $("#optimised_02").css({'opacity': '1', 'border': '4px solid #414ea2'});
+      $("#optimised_02").css({'opacity': '1', 'border': '4px solid #6d79c3'});
       console.log("Optimised = Somewhat");
 
     } else if (optimised_param == 'psychonaut') {
       $("#optimised_01, #optimised_02").css('opacity', '0.5');
-      $("#optimised_03").css({'opacity': '1', 'border': '4px solid #414ea2'});
+      $("#optimised_03").css({'opacity': '1', 'border': '4px solid #6d79c3'});
       console.log("Optimised: Psychonaut = true");
     }
 
@@ -98,52 +98,52 @@ $(document).ready(function() {
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
-      $("#noots_products_title").text(latencyTitle);
-      $("#products_latency").show();
-      $("#products_continuity, #products_rem, #products_deep").hide();
+      $("#noots_products_title").text(sexTitle);
+      $("#products_sex").show();
+      $("#products_muscle, #products_mental").hide();
       // Playlist section
-      $("#playlist_latency").show();
-      $("#playlist_continuity, #playlist_rem, #playlist_deep").hide();
+      $("#playlist_sex").show();
+      $("#playlist_muscle, #playlist_mental, #playlist_deep").hide();
       // Masterclass section
-      $("#masterclassModule_latency").show();
-      $("#masterclassModule_continuity, #masterclassModule_rem, #masterclassModule_deep").hide();
+      $("#masterclassModule_sex").show();
+      $("#masterclassModule_muscle, #masterclassModule_mental").hide();
       // Custom Stack section
       // $("#custom_stack_title").text(focusTitle);
-      $("#customStackBanner_latency").show();
-      $("#customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
+      $("#customStackBanner_sex").show();
+      $("#customStackBanner_muscle, #customStackBanner_mental").hide();
     } else if (subcategory_param == 'muscle') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
-      $("#noots_products_title").text(continuityTitle);
-      $("#products_continuity").show();
-      $("#products_latency, #products_rem, #products_deep").hide();
+      $("#noots_products_title").text(muscleTitle);
+      $("#products_muscle").show();
+      $("#products_sex, #products_mental").hide();
       // Playlist section
-      $("#playlist_continuity").show();
-      $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
+      $("#playlist_muscle").show();
+      $("#playlist_sex, #playlist_mental").hide();
       // Masterclass section
-      $("#masterclassModule_continuity").show();
-      $("#masterclassModule_latency, #masterclassModule_rem, #masterclassModule_deep").hide();
+      $("#masterclassModule_muscle").show();
+      $("#masterclassModule_sex, #masterclassModule_mental").hide();
     // Custom Stack section
-      $("#customStackBanner_continuity").show();
-      $("#customStackBanner_latency, #customStackBanner_rem, #customStackBanner_deep").hide();
+      $("#customStackBanner_muscle").show();
+      $("#customStackBanner_sex, #customStackBanner_mental").hide();
     } else if (subcategory_param == 'mental') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
-      $("#noots_products_title").text(remTitle);
-      $("#products_rem").show();
-      $("#products_latency, #products_continuity, #products_deep").hide();
+      $("#noots_products_title").text(mentalTitle);
+      $("#products_mental").show();
+      $("#products_sex, #products_muscle").hide();
       // Playlist section
-      $("#playlist_rem").show();
-      $("#playlist_latency, #playlist_continuity, #playlist_deep").hide();
+      $("#playlist_mental").show();
+      $("#playlist_sex, #playlist_muscle").hide();
       // Masterclass section
-      $("#masterclassModule_rem").show();
-      $("#masterclassModule_latency, #masterclassModule_continuity, #masterclassModule_deep").hide();
+      $("#masterclassModule_mental").show();
+      $("#masterclassModule_sex, #masterclassModule_muscle").hide();
       // Custom Stack section
-      $("#custom_stack_title").text(remTitle);
-      $("#customStackBanner_rem").show();
-      $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_deep").hide();
+      $("#custom_stack_title").text(mentalTitle);
+      $("#customStackBanner_mental").show();
+      $("#customStackBanner_sex, #customStackBanner_muscle").hide();
     } else if (subcategory_param == 'other') {
       $("#checklist_title").text(mainTitle);
       $("#custom_stack_block").insertAfter("#checklist");
