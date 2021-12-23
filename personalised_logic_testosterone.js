@@ -12,7 +12,7 @@ $(document).ready(function() {
     console.log("Update name to:",name_string);
 
     // Optimised values
-    // Values: notvery, somewhat, psychonaut
+    // Values: struggling, average, Semi-Solid
     const optimised_param = urlParams.get('optimised');
     console.log("optimised =", optimised_param);
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
     console.log("category =", category_param);
 
     // Subcategory values
-    // Values: latency, continuity, REM, deep, other
+    // Values: sex, muscle, mental, other
     const subcategory_param = urlParams.get('subcategory');
     console.log("subcategory =", subcategory_param);
 
@@ -42,38 +42,36 @@ $(document).ready(function() {
     console.log("Update category to:", category_string);
 
     // Content
-    const mainTitle = "sleep enhancement";
-    const latencyTitle = "falling asleep quicker";
-    const continuityTitle = "staying asleep longer";
-    const remTitle = "boosting REM sleep";
-    const deepTitle = "boosting deep sleep";
-    const latencyVal = "latency";
-    const continuityVal = "continuity";
-    const remVal = "rem";
-    const deepVal = "deep";
+    const mainTitle = "testosterone enhancement";
+    const sexTitle = "improving sexual performance";
+    const muscleTitle = "muscle growth";
+    const mentalTitle = "improving mental health";
+    const sexVal = "sex";
+    const musceleVal = "muscle";
+    const mentalVal = "mental";
 
     // Optimised - from 1-3
-    const optimisedTitle01 = "Not Very";
-    const optimisedTitle02 = "Somewhat";
-    const optimisedTitle03 = "Very";
+    const optimisedTitle01 = "Struggling";
+    const optimisedTitle02 = "Average";
+    const optimisedTitle03 = "Semi-Solid";
     $(".margin_0.optimisedtitle_01").text(optimisedTitle01);
     $(".margin_0.optimisedtitle_02").text(optimisedTitle02);
     $(".margin_0.optimisedtitle_03").text(optimisedTitle03);
 
     if (optimised_param == 'notvery') {
-      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #577ad1'});
+      $("#optimised_01").css({'opacity': '1', 'border': '4px solid #414ea2'});
       $("#optimised_02, #optimised_03").css('opacity', '0.5');
       console.log("Multiple jQuery CSS property = working");
       console.log("Optimised: Not Very = true");
 
     } else if (optimised_param == 'somewhat') {
       $("#optimised_01, #optimised_03").css('opacity', '0.5');
-      $("#optimised_02").css({'opacity': '1', 'border': '4px solid #577ad1'});
+      $("#optimised_02").css({'opacity': '1', 'border': '4px solid #414ea2'});
       console.log("Optimised = Somewhat");
 
     } else if (optimised_param == 'psychonaut') {
       $("#optimised_01, #optimised_02").css('opacity', '0.5');
-      $("#optimised_03").css({'opacity': '1', 'border': '4px solid #577ad1'});
+      $("#optimised_03").css({'opacity': '1', 'border': '4px solid #414ea2'});
       console.log("Optimised: Psychonaut = true");
     }
 
@@ -96,7 +94,7 @@ $(document).ready(function() {
     }
 
     // Subcategory focus area
-    if (subcategory_param == 'latency') {
+    if (subcategory_param == 'sex') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
@@ -113,7 +111,7 @@ $(document).ready(function() {
       // $("#custom_stack_title").text(focusTitle);
       $("#customStackBanner_latency").show();
       $("#customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
-    } else if (subcategory_param == 'continuity') {
+    } else if (subcategory_param == 'muscle') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
@@ -129,7 +127,7 @@ $(document).ready(function() {
     // Custom Stack section
       $("#customStackBanner_continuity").show();
       $("#customStackBanner_latency, #customStackBanner_rem, #customStackBanner_deep").hide();
-    } else if (subcategory_param == 'rem') {
+    } else if (subcategory_param == 'mental') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
@@ -146,28 +144,11 @@ $(document).ready(function() {
       $("#custom_stack_title").text(remTitle);
       $("#customStackBanner_rem").show();
       $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_deep").hide();
-    } else if (subcategory_param == 'deep') {
-      // Checklist section
-      $("#checklist_title").text(mainTitle);
-      // Noots section
-      $("#noots_products_title").text(deepTitle);
-      $("#products_deep").show();
-      $("#products_latency, #products_continuity, #products_rem").hide();
-      // Playlist section
-      $("#playlist_deep").show();
-      $("#playlist_latency, #playlist_continuity, #playlist_rem").hide();
-      // Masterclass section
-      $("#masterclass_modules_deep").show();
-      $("#masterclassModule_latency, #masterclassModule_continuity, #masterclassModule_rem").hide();
-      // Custom Stack section
-      $("#custom_stack_title").text(deepTitle);
-      $("#customStackBanner_deeo").show();
-      $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_rem").hide();
     } else if (subcategory_param == 'other') {
       $("#checklist_title").text(mainTitle);
       $("#custom_stack_block").insertAfter("#checklist");
-      $("#custom_stack_block, #checklist_customStack, #coachingLine, #customStackBanner_latency").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine, #customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
+      $("#custom_stack_block, #checklist_customStack, #coachingLine, #customStackBanner_sex").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine, #customStackBanner_muscle, #customStackBanner_mental").hide();
       console.log("other = true, moving custom stack to top");
       console.log("other = true");
       console.log("hiding Noots section");
