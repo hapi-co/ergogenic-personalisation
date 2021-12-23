@@ -208,13 +208,17 @@ $(document).ready(function() {
       $("#customStackBanner_memory, #customStackBanner_stress, #customStackBanner_focus").hide();
 
     } else if (subcategory_param == 'other') {
+      // Checklist section
+      $("#checklist_title").text(brainTitle);
       console.log("other = true");
       console.log("hiding Noots section");
       $("#custom_stack_block").insertAfter("#checklist");
-      $("#custom_stack_block, #checklist_customStack, #coachingLine").show();
-      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine").hide();
+      $("#custom_stack_block, #checklist_customStack, #coachingLine, #customStackBanner_focus").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine, #customStackBanner_memory, #customStackBanner_stress, #customStackBanner_mood").hide();
       console.log("other = true, moving custom stack to top");
     }
+
+    // **NEED AN IF & STATEMENT. IF coaching + other, show/hide line**
 
     // Coaching logic
     if (coaching_param == 'yes') {
