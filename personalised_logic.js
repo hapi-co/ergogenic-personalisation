@@ -187,9 +187,9 @@ $(document).ready(function() {
       console.log("other = true");
       console.log("hiding Noots section");
       $("#noots_block, #checklist_noots").hide();
+      $("#coachingLine").show();
       console.log("other = true, moving custom stack to top");
       $("#custom_stack_block").insertAfter("#checklist");
-      $("#coachingLine").show();
       // Make line visible in block as it move up
       // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
     }
@@ -220,7 +220,7 @@ $(document).ready(function() {
     // Coaching logic
     if (coaching_param == 'yes') {
       console.log("coaching = true");
-      $("#checklist_customStack, #custom_stack_block").show();
+      $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
       $("#custom_stack_block").insertAfter("#checklist");
       $("#noots_block, #checklist_noots").hide();
       // $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
