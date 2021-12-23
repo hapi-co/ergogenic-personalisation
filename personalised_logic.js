@@ -75,25 +75,23 @@ $(document).ready(function() {
 
     $("#coachingLine").hide();
 
-      // Experience
-      if (experience_param == 'fresh') {
-        $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
-        $("#custom_stack_block, #checklist_customStack").hide();
-        console.log("experience = fresh");
-        console.log("show: ebook, playlist, masterclass & hide custom noots");
-
-      } else if (experience_param == 'avg') {
-        // Show Ebook, Custom Stack, Masterclass
-        $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
-        console.log("experience = avg");
-        console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
-
-      } else if (experience_param == 'expert') {
-        $("#custom_stack_block, #checklist_customStack").show();
-        $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-        console.log("experience = expert");
-        console.log("show: custom stack, hide all else");
-      }
+    // Experience
+    if (experience_param == 'fresh') {
+      $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+      $("#custom_stack_block, #checklist_customStack").hide();
+      console.log("experience = fresh");
+      console.log("show: ebook, playlist, masterclass & hide custom noots");
+    } else if (experience_param == 'avg') {
+      // Show Ebook, Custom Stack, Masterclass
+      $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
+      console.log("experience = avg");
+      console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
+    } else if (experience_param == 'expert') {
+      $("#custom_stack_block, #checklist_customStack").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+      console.log("experience = expert");
+      console.log("show: custom stack, hide all else");
+    }
 
     // Subcategory focus area
     if (subcategory_param == 'focus') {
@@ -214,6 +212,7 @@ $(document).ready(function() {
       console.log("coaching = true");
     } else if (coaching_param == 'no') {
       $("#masterclassLine, #checklist_customStack, #custom_stack_block").hide();
+      console.log("coaching = false");
     }
 
     // OVERRIDES

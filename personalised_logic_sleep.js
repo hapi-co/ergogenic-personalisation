@@ -5,15 +5,8 @@ $(document).ready(function() {
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams);
 
-    // Dynamic class selector test
-    // var bannerName = "Banner";
-    // $("#hero"+bannerName).css("background-color", "red");
-    // console.log("set hero bkg to red");
-
     // Name values
     // Values: dynamic
-    // const name_param = urlParams.get('name');
-    // console.log("name =", name_param);
     const name_string = urlParams.get('name'); // NULL
     $("#name").text(name_string);
     console.log("Update name to:",name_string);
@@ -45,8 +38,8 @@ $(document).ready(function() {
 
     // Update category
     const category_string = urlParams.get('category');
-    console.log("Update category to:", category_string);
     $("#category").text(category_string);
+    console.log("Update category to:", category_string);
 
     // Content
     const mainTitle = "sleep enhancement";
@@ -68,28 +61,39 @@ $(document).ready(function() {
     $(".margin_0.optimisedtitle_03").text(optimisedTitle03);
 
     if (optimised_param == 'notvery') {
-      console.log("Optimised: Not Very = true");
       $("#optimised_01").css({'opacity': '1', 'border': '4px solid #577ad1'});
       $("#optimised_02, #optimised_03").css('opacity', '0.5');
       console.log("Multiple jQuery CSS property = working");
+      console.log("Optimised: Not Very = true");
 
     } else if (optimised_param == 'somewhat') {
-      console.log("Optimised = Somewhat");
       $("#optimised_01, #optimised_03").css('opacity', '0.5');
       $("#optimised_02").css({'opacity': '1', 'border': '4px solid #577ad1'});
+      console.log("Optimised = Somewhat");
 
     } else if (optimised_param == 'psychonaut') {
-      console.log("Optimised: Psychonaut = true");
       $("#optimised_01, #optimised_02").css('opacity', '0.5');
       $("#optimised_03").css({'opacity': '1', 'border': '4px solid #577ad1'});
+      console.log("Optimised: Psychonaut = true");
     }
 
-    //
-    // if (musicTaste == 'Justin Beiber') {
-      // penisSize: "8==D";
-    // } else if (musicTaste == 'Black Sabbath') {
-      // penisSize: "8=====================================D";
-    // }
+    // Experience
+    if (experience_param == 'fresh') {
+      $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+      $("#custom_stack_block, #checklist_customStack").hide();
+      console.log("experience = fresh");
+      console.log("show: ebook, playlist, masterclass & hide custom noots");
+    } else if (experience_param == 'avg') {
+      // Show Ebook, Custom Stack, Masterclass
+      $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
+      console.log("experience = avg");
+      console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
+    } else if (experience_param == 'expert') {
+      $("#custom_stack_block, #checklist_customStack").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
+      console.log("experience = expert");
+      console.log("show: custom stack, hide all else");
+    }
 
     // Subcategory focus area
     if (subcategory_param == 'latency') {
@@ -109,7 +113,6 @@ $(document).ready(function() {
       // $("#custom_stack_title").text(focusTitle);
       $("#customStackBanner_latency").show();
       $("#customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
-
     } else if (subcategory_param == 'continuity') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
@@ -120,17 +123,12 @@ $(document).ready(function() {
       // Playlist section
       $("#playlist_continuity").show();
       $("#playlist_latency, #playlist_rem, #playlist_deep").hide();
-      // IN FUTURE, HERE IS A MORE EFFICIENT WAY TO APPEND THE _SUBCATEGORY ON END, DYNAMICALLY, NOT MANUALLY
-      // $('#playlist_' + latencyVal, '#playlist_' + remVal, '#playlist_' + deepVal).hide();
-      // console.log(latencyVal, remVal, deepVal);
-      // console.log("dynamic class selector is working!");
       // Masterclass section
       $("#masterclassModule_continuity").show();
       $("#masterclassModule_latency, #masterclassModule_rem, #masterclassModule_deep").hide();
     // Custom Stack section
       $("#customStackBanner_continuity").show();
       $("#customStackBanner_latency, #customStackBanner_rem, #customStackBanner_deep").hide();
-
     } else if (subcategory_param == 'rem') {
       // Checklist section
       $("#checklist_title").text(mainTitle);
@@ -148,9 +146,7 @@ $(document).ready(function() {
       $("#custom_stack_title").text(remTitle);
       $("#customStackBanner_rem").show();
       $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_deep").hide();
-
     } else if (subcategory_param == 'deep') {
-
       // Checklist section
       $("#checklist_title").text(mainTitle);
       // Noots section
@@ -167,35 +163,45 @@ $(document).ready(function() {
       $("#custom_stack_title").text(deepTitle);
       $("#customStackBanner_deeo").show();
       $("#customStackBanner_latency, #customStackBanner_continuity, #customStackBanner_rem").hide();
-
     } else if (subcategory_param == 'other') {
-      $("#noots_block, #checklist_noots").hide();
+      $("#checklist_title").text(mainTitle);
       $("#custom_stack_block").insertAfter("#checklist");
-      // Make line visible in block as it move up
-      // Hide line @ bottom block of page - how can I determine what block it will be, or will I have to manually sort it out?
-    }
-
-    // Experience
-    if (experience_param == 'fresh') {
-      $("#checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
-      $("#custom_stack_block, #checklist_customStack").hide();
-
-    } else if (experience_param == 'avg') {
-      // Show Ebook, Custom Stack, Masterclass
-      $("#checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
-      // $("#noots_block, #checklist_noots, #playlist_block, #checklist_playlist").hide();
-
-    } else if (experience_param == 'expert') {
-      $("#custom_stack_block, #checklist_customStack").show();
-      $("#noots_block, #checklist_noots, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").hide();
-      // Show coaching at top, hide everything else
-      // Need to update checklist
+      $("#custom_stack_block, #checklist_customStack, #coachingLine, #customStackBanner_latency").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass, #coachingLine, #customStackBanner_continuity, #customStackBanner_rem, #customStackBanner_deep").hide();
+      console.log("other = true, moving custom stack to top");
+      console.log("other = true");
+      console.log("hiding Noots section");
     }
 
     // Coaching logic
     if (coaching_param == 'yes') {
-      $("#checklist_customStack, #custom_stack_block").show();
+      $("#checklist_title").text(mainTitle);
       $("#custom_stack_block").insertAfter("#checklist");
+      $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
+      $("#noots_block, #checklist_noots, #masterclassLine").hide();
+      console.log("coaching = true");
+    } else if (coaching_param == 'no') {
+      $("#masterclassLine, #checklist_customStack, #custom_stack_block").hide();
+      console.log("coaching = false");
+    }
+
+    // OVERRIDES
+    if (coaching_param == 'yes' && subcategory_param == 'other') {
+      $("#custom_stack_block").show();
+      $("#coachingLine").hide();
+      console.log("coaching and category other = true");
+    }
+
+    if (coaching_param == 'yes' && experience_param == 'expert') {
+      console.log("coaching no and experience expert = true");
+      $("#custom_stack_block").show();
+      $("#coachingLine").hide();
+    }
+
+    if (experience_param == 'expert') {
+      $("#checklist_customStack, #custom_stack_block").show();
+      $("#coachingLine").hide();
+      console.log("coaching no and experience expert = true");
     }
 
 });
@@ -213,3 +219,15 @@ jQuery("#playVideo").on('click', function() {
        // Num of miliseconds to hide for. 1,000 = 1 sec.
        350);
 });
+
+// Dynamic class selector test
+// var bannerName = "Banner";
+// $("#hero"+bannerName).css("background-color", "red");
+// console.log("set hero bkg to red");
+
+//
+// if (musicTaste == 'Justin Beiber') {
+  // penisSize: "8==D";
+// } else if (musicTaste == 'Black Sabbath') {
+  // penisSize: "8=====================================D";
+// }
