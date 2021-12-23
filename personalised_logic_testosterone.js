@@ -77,12 +77,11 @@ $(document).ready(function() {
 
     // Experience
     if (experience_param == 'fresh') {
-      $("#ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
+      $("#noots_block, #checklist_noots, #ebook_block, #checklist_ebook, #playlist_block, #checklist_playlist, #masterclass_block, #checklist_masterclass").show();
       $("#custom_stack_block, #checklist_customStack").hide();
       console.log("experience = fresh");
       console.log("show: ebook, playlist, masterclass & hide custom noots");
     } else if (experience_param == 'avg') {
-      // Show Ebook, Custom Stack, Masterclass
       $("#ebook_block, #checklist_ebook, #custom_stack_block, #checklist_customStack, #masterclass_block, #checklist_masterclass").show();
       console.log("experience = avg");
       console.log("show: ebook, custom stack, masterclass & hide playlist, noots?");
@@ -159,7 +158,7 @@ $(document).ready(function() {
       $("#checklist_title").text(mainTitle);
       // $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
-      $("#noots_block, #checklist_noots, #masterclassLine").hide();
+      $("#noots_block, #checklist_noots, #coachingLine").hide();
       console.log("coaching = true");
     } else if (coaching_param == 'no') {
       $("#masterclassLine, #checklist_customStack, #custom_stack_block").hide();

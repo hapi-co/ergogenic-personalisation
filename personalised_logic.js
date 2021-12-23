@@ -208,7 +208,7 @@ $(document).ready(function() {
       $("#checklist_title").text(brainTitle);
       // $("#custom_stack_block").insertAfter("#checklist");
       $("#checklist_customStack, #custom_stack_block, #coachingLine").show();
-      $("#noots_block, #checklist_noots, #masterclassLine").hide();
+      $("#noots_block, #checklist_noots, #coachingLine").hide();
       console.log("coaching = true");
     } else if (coaching_param == 'no') {
       $("#masterclassLine, #checklist_customStack, #custom_stack_block").hide();
